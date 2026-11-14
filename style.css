@@ -52,7 +52,7 @@ td:first-child, th:first-child { text-align: left; }
 .record p { margin: 0; }
 ul.posts { list-style: none; margin: 0; padding: 0; }
 ul.posts li { padding: 10px 0; border-bottom: 1px solid var(--line); display: flex; gap: 14px; align-items: flex-start; }
-ul.posts img.thumb { width: 110px; height: auto; border-radius: 4px; flex-shrink: 0; }
+ul.posts img.thumb { width: 72px; height: 72px; object-fit: cover; border-radius: 4px; flex-shrink: 0; }
 ul.posts li:last-child { border-bottom: none; }
 ul.posts a { color: var(--ink); text-decoration: none; font-weight: 600; }
 ul.posts a:hover { color: var(--accent); }

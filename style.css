@@ -67,3 +67,14 @@ footer.site {
 footer.site a { color: var(--accent); }
 a { color: var(--accent); }
 .back { font-size: .9rem; }
+nav.tabs { display: flex; gap: 8px; justify-content: center; margin-top: 16px; flex-wrap: wrap; }
+nav.tabs a { padding: 5px 20px; border: 1px solid var(--line); border-radius: 999px; text-decoration: none; color: var(--ink); background: var(--card); font-size: .95rem; }
+nav.tabs a.current { background: var(--accent); border-color: var(--accent); color: #fff; }
+.horse { border-top: 1px solid var(--line); padding: 16px 0 6px; }
+.horse h3 { margin: 0 0 2px; font-size: 1.12rem; }
+.horse h3 .finish { color: var(--accent); font-size: .95rem; margin-left: 6px; }
+.horse p { margin: 0 0 8px; }
+.horse .meta { color: var(--muted); font-size: .85rem; margin: 0 0 6px; }
+.horse .pedigree { font-size: .92rem; margin: 0 0 6px; }
+.horse .src { font-size: .85rem; }
+.forecast { background: #f0f3f1; border-left: 4px solid var(--accent); padding: 8px 12px; margin: 0 0 10px; font-size: .93rem; }

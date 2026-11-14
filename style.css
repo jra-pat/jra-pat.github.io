@@ -1,0 +1,67 @@
+:root {
+  --ink: #22252a;
+  --muted: #6b7280;
+  --accent: #1d6b52;
+  --line: #e3e6e3;
+  --bg: #f7f7f5;
+  --card: #ffffff;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.8;
+}
+header.site {
+  background: var(--card);
+  border-bottom: 3px solid var(--accent);
+  padding: 28px 16px 20px;
+  text-align: center;
+}
+header.site h1 { margin: 0; font-size: 1.7rem; letter-spacing: .02em; }
+header.site h1 a { color: var(--ink); text-decoration: none; }
+header.site p { margin: 4px 0 0; color: var(--muted); font-size: .95rem; }
+main { max-width: 760px; margin: 0 auto; padding: 20px 16px 48px; }
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 20px 22px;
+  margin-bottom: 20px;
+}
+.card h2 { margin-top: 0; font-size: 1.25rem; line-height: 1.5; }
+.card h2 a { color: var(--ink); text-decoration: none; }
+.card h2 a:hover { color: var(--accent); }
+.date { color: var(--muted); font-size: .85rem; margin-bottom: 8px; }
+article p { margin: 0 0 1em; }
+article h3 { font-size: 1.05rem; margin: 1.4em 0 .5em; }
+article img { max-width: 100%; height: auto; border-radius: 4px; margin: .5em 0; }
+table { border-collapse: collapse; width: 100%; font-size: .9rem; margin: .5em 0 1em; }
+th, td { border: 1px solid var(--line); padding: 4px 8px; text-align: right; }
+th { background: #f0f3f1; }
+td:first-child, th:first-child { text-align: left; }
+.record {
+  background: #f0f3f1;
+  border-left: 4px solid var(--accent);
+  padding: 10px 14px;
+  margin: 1em 0;
+  font-size: .95rem;
+}
+.record p { margin: 0; }
+ul.posts { list-style: none; margin: 0; padding: 0; }
+ul.posts li { padding: 10px 0; border-bottom: 1px solid var(--line); }
+ul.posts li:last-child { border-bottom: none; }
+ul.posts a { color: var(--ink); text-decoration: none; font-weight: 600; }
+ul.posts a:hover { color: var(--accent); }
+ul.posts .date { display: block; margin: 0; }
+footer.site {
+  text-align: center;
+  color: var(--muted);
+  font-size: .85rem;
+  padding: 24px 16px 40px;
+}
+footer.site a { color: var(--accent); }
+a { color: var(--accent); }
+.back { font-size: .9rem; }

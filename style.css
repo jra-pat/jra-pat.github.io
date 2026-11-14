@@ -78,3 +78,6 @@ nav.tabs a.current { background: var(--accent); border-color: var(--accent); col
 .horse .pedigree { font-size: .92rem; margin: 0 0 6px; }
 .horse .src { font-size: .85rem; }
 .forecast { background: #f0f3f1; border-left: 4px solid var(--accent); padding: 8px 12px; margin: 0 0 10px; font-size: .93rem; }
+table.horses { font-size: .88rem; }
+table.horses th, table.horses td { text-align: left; vertical-align: top; }
+table.horses td:first-child { white-space: nowrap; font-weight: 600; }

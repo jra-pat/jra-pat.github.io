@@ -54,5 +54,15 @@
 </div>
 </main>
 <footer class="site">明日は明日の馬が勝つ／馬券公開ブログ</footer>
+<p style="text-align:center;color:#8a94a6;font-size:.85em;margin:4px 0 14px;">訪問者数：<span id="visitor-counter"></span></p>
+<script>
+window.addEventListener('load', function () {
+  if (window.goatcounter && window.goatcounter.visit_count) {
+    window.goatcounter.visit_count({path: 'TOTAL', append: '#visitor-counter', no_branding: true});
+  }
+});
+</script>
+
+<script data-goatcounter="https://jra-pat.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>

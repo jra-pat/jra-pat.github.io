@@ -11,6 +11,13 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://jra-pat.github.io/">
 <link rel="stylesheet" href="style.css">
+<style>
+.cal-nav { display: flex; align-items: center; justify-content: space-between; margin: 0 0 6px; }
+.cal-nav .cal-month { margin: 0; }
+.cal-nav button { background: #fff; border: 1px solid var(--line); border-radius: 6px; padding: 4px 10px; font-size: .85rem; cursor: pointer; color: var(--accent); }
+.cal-nav button:disabled { opacity: .35; cursor: default; }
+</style>
+
 </head>
 <body>
 <header class="site">
@@ -30,7 +37,7 @@
 </div>
 <div class="card">
 <h2>カレンダー</h2>
-<div class="cal-wrap"><div class="cal-box"><p class="cal-month">2026年11月</p><table class="cal"><tr><th>日</th><th>月</th><th>火</th><th>水</th><th>木</th><th>金</th><th>土</th></tr><tr><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a href="#d2026-11-08">8</a></td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td></tr><tr><td><a href="#d2026-11-15">15</a></td><td>9</td><td>10</td><td>11</td><td>12</td><td><a href="#d2026-11-13">13</a></td><td><a href="#d2026-11-14">14</a></td></tr><tr><td>22</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td></tr><tr><td>29</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td></tr><tr><td></td><td>30</td><td></td><td></td><td></td><td></td><td></td></tr></table></div><div class="cal-box"><p class="cal-month">2026年7月</p><table class="cal"><tr><th>日</th><th>月</th><th>火</th><th>水</th><th>木</th><th>金</th><th>土</th></tr><tr><td></td><td></td><td></td><td>1</td><td>2</td><td>3</td><td><a href="#d2026-07-04">4</a></td></tr><tr><td>5</td><td>6</td><td>7</td><td>8</td><td><a href="#d2026-07-09">9</a></td><td><a href="#d2026-07-10">10</a></td><td><a href="#d2026-07-11">11</a></td></tr><tr><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td><a href="#d2026-07-17">17</a></td><td>18</td></tr><tr><td><a href="#d2026-07-19">19</a></td><td>20</td><td>21</td><td>22</td><td>23</td><td><a href="#d2026-07-24">24</a></td><td>25</td></tr><tr><td><a href="#d2026-07-26">26</a></td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td><td></td></tr></table></div></div>
+<div class="cal-wrap"><div class="cal-box"><div class="cal-nav"><button type="button" id="calPrev">‹ 前の月</button><p class="cal-month" id="calLabel"></p><button type="button" id="calNext">次の月 ›</button></div><table class="cal" id="calTable"></table></div></div>
 <p class="date">数字がリンクになっている日に記事があります。押すとその日の記事へ移動します。</p>
 </div>
 <div class="card">
@@ -105,6 +112,48 @@
 </main>
 <footer class="site">明日は明日の馬が勝つ／馬券公開ブログ</footer>
 <p style="text-align:center;color:#8a94a6;font-size:.85em;margin:4px 0 14px;">訪問者数：<span id="visitor-counter"></span></p>
+<script>
+(function () {
+  var days = {}, months = [];
+  Array.prototype.forEach.call(document.querySelectorAll('h3.date-head'), function (h) {
+    var key = h.id.slice(1);
+    days[key] = '#' + h.id;
+    var ym = key.slice(0, 7);
+    if (months.indexOf(ym) < 0) months.push(ym);
+  });
+  months.sort();
+  if (!months.length) return;
+  var idx = months.length - 1;
+  var label = document.getElementById('calLabel');
+  var table = document.getElementById('calTable');
+  var prev = document.getElementById('calPrev');
+  var next = document.getElementById('calNext');
+  function render() {
+    var ym = months[idx], y = +ym.slice(0, 4), m = +ym.slice(5, 7);
+    label.textContent = y + '\u5e74' + m + '\u6708';
+    var first = new Date(y, m - 1, 1).getDay(), last = new Date(y, m, 0).getDate();
+    var html = '<tr><th>\u65e5</th><th>\u6708</th><th>\u706b</th><th>\u6c34</th><th>\u6728</th><th>\u91d1</th><th>\u571f</th></tr>', day = 1;
+    for (var r = 0; r < 6 && day <= last; r++) {
+      html += '<tr>';
+      for (var c = 0; c < 7; c++) {
+        if ((r === 0 && c < first) || day > last) { html += '<td></td>'; }
+        else {
+          var key = ym + '-' + ('0' + day).slice(-2);
+          html += days[key] ? '<td><a href="' + days[key] + '">' + day + '</a></td>' : '<td>' + day + '</td>';
+          day++;
+        }
+      }
+      html += '</tr>';
+    }
+    table.innerHTML = html;
+    prev.disabled = idx === 0;
+    next.disabled = idx === months.length - 1;
+  }
+  prev.addEventListener('click', function () { if (idx > 0) { idx--; render(); } });
+  next.addEventListener('click', function () { if (idx < months.length - 1) { idx++; render(); } });
+  render();
+})();
+</script>
 <script>
 window.addEventListener('load', function () {
   if (window.goatcounter && window.goatcounter.visit_count) {

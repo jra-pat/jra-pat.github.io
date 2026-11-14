@@ -81,3 +81,11 @@ nav.tabs a.current { background: var(--accent); border-color: var(--accent); col
 table.horses { font-size: .88rem; }
 table.horses th, table.horses td { text-align: left; vertical-align: top; }
 table.horses td:first-child { white-space: nowrap; font-weight: 600; }
+.cal-wrap { display: flex; gap: 20px; flex-wrap: wrap; }
+.cal-month { font-weight: 700; margin: 0 0 6px; }
+table.cal { border-collapse: collapse; font-size: .9rem; width: auto; margin: 0; }
+table.cal th, table.cal td { border: 1px solid var(--line); width: 38px; height: 34px; text-align: center; padding: 0; }
+table.cal th { background: #f0f3f1; }
+table.cal td a { display: block; font-weight: 700; color: var(--accent); }
+.date-head { font-size: 1rem; margin: 18px 0 4px; color: var(--ink); }
+.date-head:first-of-type { margin-top: 4px; }

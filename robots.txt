@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://jra-pat.github.io/sitemap.xml

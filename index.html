@@ -4861,7 +4861,7 @@ window.addEventListener('load', function () {
       var lis = ul.querySelectorAll('li'); n += lis.length;
       Array.prototype.forEach.call(lis, function (li) {
         var div = li.querySelector('div'); if (!div) return;
-        var t = document.createElement('span'); t.className = 'newmark'; t.textContent = '\U0001F195';
+        var t = document.createElement('span'); t.className = 'newmark'; t.textContent = '🆕';
         div.insertBefore(t, div.firstChild);
       });
     }

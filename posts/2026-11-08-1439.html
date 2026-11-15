@@ -11,6 +11,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://jra-pat.github.io/posts/2026-11-08-1439.html">
 <link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css">
 </head>
 <body>
 <header class="site">
@@ -47,6 +48,11 @@
 <p class="back"><a href="../index.html">← 予想記事一覧へ</a></p>
 </div>
 </main>
+<div id="waline" style="max-width:800px;margin:24px auto;padding:0 16px;"></div>
+<script type="module">
+import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+init({ el: '#waline', serverURL: 'https://jra-pat-waline.vercel.app', lang: 'jp', login: 'disable' });
+</script>
 <footer class="site">明日は明日の馬が勝つ／馬券公開ブログ</footer>
 <script data-goatcounter="https://jra-pat.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>

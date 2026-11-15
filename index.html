@@ -3265,6 +3265,12 @@ init({ el: '#waline', serverURL: 'https://jra-pat-waline.vercel.app', lang: 'jp'
   });
   months.sort();
   if (!months.length) return;
+  var groups = [];
+  Array.prototype.forEach.call(document.querySelectorAll('h3.date-head'), function (h) {
+    groups.push({ ym: h.id.slice(1, 8), head: h, list: h.nextElementSibling });
+  });
+  var listTitle = null;
+  Array.prototype.forEach.call(document.querySelectorAll('h2'), function (h) { if (h.textContent.indexOf('予想記事') === 0) listTitle = h; });
   var idx = months.length - 1;
   var label = document.getElementById('calLabel');
   var table = document.getElementById('calTable');
@@ -3290,9 +3296,13 @@ init({ el: '#waline', serverURL: 'https://jra-pat-waline.vercel.app', lang: 'jp'
     table.innerHTML = html;
     prev.disabled = idx === 0;
     next.disabled = idx === months.length - 1;
+    groups.forEach(function (g) { var d = g.ym === ym ? '' : 'none'; g.head.style.display = d; if (g.list) g.list.style.display = d; });
+    if (listTitle) listTitle.textContent = '予想記事（' + y + '年' + m + '月）';
   }
   prev.addEventListener('click', function () { if (idx > 0) { idx--; render(); } });
   next.addEventListener('click', function () { if (idx < months.length - 1) { idx++; render(); } });
+  var h0 = (location.hash || '').slice(1);
+  if (h0 && days[h0]) { var i0 = months.indexOf(h0.slice(0, 7)); if (i0 >= 0) idx = i0; }
   render();
 })();
 </script>

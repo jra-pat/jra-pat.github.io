@@ -15,11 +15,13 @@ body {
   line-height: 1.8;
 }
 header.site {
-  background: var(--card);
+  background: #faf6ec url('images/mole-header.jpg') no-repeat center center;
+  background-size: cover;
   border-bottom: 3px solid var(--accent);
-  padding: 28px 16px 20px;
+  padding: 52px 16px 44px;
   text-align: center;
 }
+header.site h1, header.site p { text-shadow: 0 1px 0 rgba(255,255,255,.75), 0 0 8px rgba(255,255,255,.65); }
 header.site h1 { margin: 0; font-size: 1.7rem; letter-spacing: .02em; }
 header.site h1 a { color: var(--ink); text-decoration: none; }
 header.site p { margin: 4px 0 0; color: var(--muted); font-size: .95rem; }

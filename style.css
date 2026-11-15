@@ -94,3 +94,9 @@ table.cal td a { display: block; font-weight: 700; color: var(--accent); }
 
 .cmt { color: var(--muted); font-size: .85em; margin-left: 6px; white-space: nowrap; }
 .newmark { background: #d33; color: #fff; font-size: .68em; font-weight: bold; padding: 1px 6px; border-radius: 4px; margin-right: 6px; vertical-align: middle; }
+
+ul.posts .tcol { display: flex; flex-direction: column; gap: 4px; flex-shrink: 0; }
+ul.posts .tcol .cmt { text-align: center; margin-left: 0; }
+ul.posts li > div .cmt { display: block; margin: 2px 0 0; }
+.newmark { background: none; color: inherit; font-size: 1.05em; padding: 0; border-radius: 0; }
+.cal-nav { flex-wrap: wrap; row-gap: 6px; }

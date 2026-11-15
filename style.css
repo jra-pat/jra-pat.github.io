@@ -91,3 +91,6 @@ table.cal th { background: #f0f3f1; }
 table.cal td a { display: block; font-weight: 700; color: var(--accent); }
 .date-head { font-size: 1rem; margin: 18px 0 4px; color: var(--ink); }
 .date-head:first-of-type { margin-top: 4px; }
+
+.cmt { color: var(--muted); font-size: .85em; margin-left: 6px; white-space: nowrap; }
+.newmark { background: #d33; color: #fff; font-size: .68em; font-weight: bold; padding: 1px 6px; border-radius: 4px; margin-right: 6px; vertical-align: middle; }

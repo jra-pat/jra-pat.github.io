@@ -12,6 +12,13 @@
 <meta property="og:url" content="https://jra-pat.github.io/records.html">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css">
+<style>
+.card table{border-collapse:collapse;width:100%;font-size:15px}
+.card th,.card td{padding:8px 10px;border-bottom:1px solid #ddd;text-align:right;white-space:nowrap}
+.card th:first-child,.card td:first-child{text-align:left}
+.card th{background:#f5f5f5}
+.tbl{overflow-x:auto}
+</style>
 </head>
 <body>
 <header class="site">
@@ -33,22 +40,26 @@
 </div>
 <div class="card">
 <h2>月別集計（2026年・中央）</h2>
-<table>
-<tr><th>年月</th><th>戦</th><th>勝</th><th>購入</th><th>払戻</th><th>収支</th><th>回収率</th><th>注記</th></tr>
-<tr><td>2026年1〜6月</td><td>179</td><td>18</td><td>210,300円</td><td>110,020円</td><td>−100,280円</td><td>52%</td><td>7月11日時点の累計</td></tr>
-<tr><td>2026年7月</td><td>28</td><td>7</td><td>63,500円</td><td>42,750円</td><td>−20,750円</td><td>67%</td><td></td></tr>
-<tr><td>2026年8月</td><td>3</td><td>0</td><td>11,600円</td><td>610円</td><td>−10,990円</td><td>5%</td><td>7月26日のレース分を8月1日の記事で報告</td></tr>
-<tr><td>2026年11月</td><td>3</td><td>1</td><td>6,000円</td><td>28,000円</td><td>+22,000円</td><td>467%</td><td></td></tr>
-</table>
+<div class="tbl"><table>
+<tr><th>年月</th><th>戦</th><th>勝</th><th>購入</th><th>払戻</th><th>収支</th><th>回収率</th></tr>
+<tr><td>2026年1〜2月</td><td>105</td><td>7</td><td>84,000円</td><td>18,000円</td><td>−66,000円</td><td>21%</td></tr>
+<tr><td>2026年3月</td><td>14</td><td>3</td><td>7,000円</td><td>10,640円</td><td>+3,640円</td><td>152%</td></tr>
+<tr><td>2026年4月</td><td>6</td><td>0</td><td>6,200円</td><td>290円</td><td>−5,910円</td><td>5%</td></tr>
+<tr><td>2026年5月</td><td>9</td><td>0</td><td>6,600円</td><td>0円</td><td>−6,600円</td><td>0%</td></tr>
+<tr><td>2026年6月</td><td>30</td><td>7</td><td>90,100円</td><td>78,090円</td><td>−12,010円</td><td>87%</td></tr>
+<tr><td>2026年7月</td><td>43</td><td>8</td><td>79,900円</td><td>45,750円</td><td>−34,150円</td><td>57%</td></tr>
+<tr><td>2026年8月</td><td>3</td><td>0</td><td>11,600円</td><td>610円</td><td>−10,990円</td><td>5%</td></tr>
+<tr><td>2026年11月</td><td>3</td><td>1</td><td>6,000円</td><td>28,000円</td><td>+22,000円</td><td>467%</td></tr>
+</table></div>
 </div>
 <div class="card">
 <h2>月別集計（2026年・地方）</h2>
-<table>
-<tr><th>年月</th><th>戦</th><th>勝</th><th>購入</th><th>払戻</th><th>収支</th><th>回収率</th><th>注記</th></tr>
-<tr><td>2026年1〜6月</td><td>6</td><td>2</td><td>6,000円</td><td>4,200円</td><td>−1,800円</td><td>70%</td><td>7月11日時点の累計</td></tr>
-<tr><td>2026年11月</td><td>3</td><td>1</td><td>3,000円</td><td>8,600円</td><td>+5,600円</td><td>287%</td><td></td></tr>
-</table>
-<p>※2026年9月・10月はブログ休止期間で投票がありません。1〜6月は7月11日時点の累計です。11月は15日時点の集計で、16日の大井分は結果が出てから反映します。</p>
+<div class="tbl"><table>
+<tr><th>年月</th><th>戦</th><th>勝</th><th>購入</th><th>払戻</th><th>収支</th><th>回収率</th></tr>
+<tr><td>2026年1〜6月</td><td>6</td><td>2</td><td>6,000円</td><td>4,200円</td><td>−1,800円</td><td>70%</td></tr>
+<tr><td>2026年11月</td><td>3</td><td>1</td><td>3,000円</td><td>8,600円</td><td>+5,600円</td><td>287%</td></tr>
+</table></div>
+<p>※月別の数値は、各月末時点の記事に掲載された累計成績から算出しています。1月分は単独の累計が記事に残っていないため、1〜2月をまとめて表示しています。地方の1〜6月も、月ごとの内訳が記事の成績表に残っていないため、まとめて表示しています。9月・10月はブログ休止期間で投票がありません（地方は7月・8月も投票なし）。11月は15日時点の集計で、16日の大井分は結果が出てから反映します。</p>
 </div>
 <div class="card">
 <h2>投票内容と結果の一覧</h2>

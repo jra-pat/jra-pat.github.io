@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>回収率向上作戦 | 明日は明日の馬が勝つ／馬券公開ブログ</title>
+<meta name="description" content="回収率を上げるために予想のルールを過去のレースで検証する「回収率向上作戦」のページ。検証結果のまとめ記事と、レース・馬ごとの検証データへのリンクを掲載しています。">
+<link rel="canonical" href="https://jra-pat.github.io/kaishu.html">
+<meta property="og:title" content="回収率向上作戦 | 明日は明日の馬が勝つ／馬券公開ブログ">
+<meta property="og:description" content="回収率を上げるために予想のルールを過去のレースで検証する「回収率向上作戦」のページ。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jra-pat.github.io/kaishu.html">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css">
+</head>
+<body>
+<header class="site">
+<h1><a href="index.html">明日は明日の馬が勝つ</a></h1>
+<p>馬券公開ブログ（ゆめもぐら）</p>
+<nav class="tabs"><a href="index.html">予想記事</a><a href="notable.html">注目馬記事</a><a href="list.html">注目馬一覧</a><a href="pog.html">POG</a><a href="records.html">馬券成績</a><a href="kaishu.html" class="current">回収率向上作戦</a></nav>
+</header>
+<main>
+<div class="card">
+<h2>回収率向上作戦</h2>
+<p>回収率をもう一段上げるため、予想のルールを過去のレースで検証する「回収率向上作戦」のページです。結果を見ずに、出馬表の情報だけで馬を選び、単勝500円＋複勝500円の仮想馬券で成績を付けています。シミュレーションに更新があったら、ここの記事も併せて更新します。</p>
+</div>
+<div class="card">
+<h2>記事一覧</h2>
+<ul class="posts">
+<li><div><span class="date">2026年11月20日</span><a href="posts/2026-11-20-kaishu.html">回収率向上作戦 〜買い方をシミュレーションで検証してみた〜</a> <span class="cmt">💬<span class="waline-comment-count" data-path="/posts/2026-11-20-kaishu.html"></span></span>
+<p class="preview">人気＜実力、複合サイン、Mの法則、逃げ馬、忘れられた実力馬と、その改良版v2・v3、地方版、そして検証中の新作戦A〜Eまで、作戦ごとの成績を一覧表でまとめました。</p></div></li>
+</ul>
+</div>
+<div class="card">
+<h2>検証データ</h2>
+<p>各作戦で選んだレースと馬の一覧（レースごと・馬ごと）は、検証データのページにまとめています。</p>
+<p>→ <a href="sim-data.html">検証データ（レース・馬ごとの一覧）</a></p>
+</div>
+</main>
+<div id="waline" style="max-width:800px;margin:24px auto;padding:0 16px;"></div>
+<script type="module">
+import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+init({ el: '#waline', serverURL: 'https://jra-pat-waline.vercel.app', lang: 'jp', login: 'disable' });
+</script>
+<footer class="site">明日は明日の馬が勝つ／馬券公開ブログ</footer>
+<script data-goatcounter="https://jra-pat.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

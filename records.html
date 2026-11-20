@@ -17,7 +17,8 @@
 .card th,.card td{padding:8px 10px;border-bottom:1px solid #ddd;text-align:right;white-space:nowrap}
 .card th:first-child,.card td:first-child{text-align:left}
 .card th{background:#f5f5f5}
-.tbl{overflow-x:auto}
+.tbl{overflow:auto;max-height:62vh}
+.card th{position:sticky;top:0;z-index:2;box-shadow:inset 0 -1px 0 #ddd}
 .card table tr.r100 td{background:#bfe39d}
 .card table tr.r90 td{background:#dcefc8}
 .card table tr.r80 td{background:#f2f8e9}
@@ -39,12 +40,12 @@
 </div>
 <div class="card">
 <h2>2026年の成績</h2>
-<table>
+<div class="tbl"><table>
 <tr><th>年</th><th>区分</th><th>戦</th><th>勝</th><th>購入</th><th>払戻</th><th>収支</th><th>回収率</th><th>注記</th></tr>
 <tr><td rowspan="3">2026年（11月19日時点・継続中）</td><td>中央</td><td>213</td><td class="win">26</td><td>291,400円</td><td>181,380円</td><td>−110,020円</td><td>62%</td><td rowspan="3"></td></tr>
 <tr class="r100"><td>地方</td><td>13</td><td class="win">4</td><td>13,000円</td><td>14,750円</td><td>+1,750円</td><td>113%</td></tr>
 <tr><td>合計</td><td>226</td><td class="win">30</td><td>304,400円</td><td>196,130円</td><td>−108,270円</td><td>64%</td></tr>
-</table>
+</table></div>
 </div>
 <div class="card">
 <h2>月別集計（2026年・中央）</h2>
@@ -131,7 +132,7 @@
 <div class="card">
 <h2>投票内容と結果の一覧</h2>
 <p>2026年の投票を掲載しています。</p>
-<table>
+<div class="tbl"><table>
 <tr><th>日付</th><th>レース</th><th>馬名</th><th>買い目</th><th>購入</th><th>結果</th><th>払戻</th><th>収支</th></tr>
 <tr><td>2026/11/20</td><td>大井11R スポーツニッポン賞</td><td>◎16 プレストアーサー</td><td>単勝 500円／複勝 500円</td><td>1,000円</td><td>結果待ち</td><td>—</td><td>—</td></tr>
 <tr><td>2026/11/19</td><td>大井10R 神明坂賞</td><td>◎7 ニジコ</td><td>単勝 500円／複勝 500円</td><td>1,000円</td><td>12着</td><td>0円</td><td>−1,000円</td></tr>
@@ -144,7 +145,7 @@
 <tr class="r80"><td>2026/11/13</td><td>川崎11R 愛川ブランド杯</td><td>◎6 ホッコーソムニウム</td><td>単勝 500円／複勝 500円</td><td>1,000円</td><td class="win">2着</td><td>850円</td><td>−150円</td></tr>
 <tr><td>2026/11/8</td><td>東京11R アルゼンチン共和国杯</td><td>◎2 ビザンチンドリーム</td><td>単勝 500円／馬連 2-3,4,6,7,15 各100円</td><td>1,000円</td><td>13着</td><td>0円</td><td>−1,000円</td></tr>
 <tr class="r100"><td>2026/11/1</td><td>東京11R 天皇賞・秋</td><td>◎ ダノンデサイル</td><td>単勝・複勝</td><td>4,000円</td><td class="win">1着</td><td>28,000円</td><td class="plus">+24,000円</td></tr>
-</table>
+</table></div>
 </div>
 <div id="waline" style="max-width:800px;margin:24px auto;padding:0 16px;"></div>
 <script type="module">

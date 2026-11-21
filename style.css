@@ -100,3 +100,14 @@ ul.posts .tcol .cmt { text-align: center; margin-left: 0; }
 ul.posts li > div .cmt { display: block; margin: 2px 0 0; }
 .newmark { background: none; color: inherit; font-size: 1.05em; padding: 0; border-radius: 0; }
 .cal-nav { flex-wrap: wrap; row-gap: 6px; }
+
+article h3.sec {
+  background: var(--accent);
+  color: #fff;
+  font-size: 1.12rem;
+  font-weight: 800;
+  letter-spacing: .05em;
+  padding: 6px 12px;
+  border-radius: 4px;
+  margin: 1.7em 0 .7em;
+}

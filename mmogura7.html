@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>復刻・電脳Mモグラ7.0 仕様書 | 明日は明日の馬が勝つ／馬券公開ブログ</title>
+<meta name="description" content="2020年の自作予想ソフト「電脳Mモグラ6.0」の馬探しロジックを復刻した「復刻・電脳Mモグラ7.0」の仕様書です。選定ロジック（必須ゲート・加点スコア・除外条件）、馬券ルール、検証計画をまとめています。">
+<link rel="canonical" href="https://jra-pat.github.io/mmogura7.html">
+<meta property="og:title" content="復刻・電脳Mモグラ7.0 仕様書 | 明日は明日の馬が勝つ／馬券公開ブログ">
+<meta property="og:description" content="「電脳Mモグラ6.0」の馬探しロジックを復刻した「復刻・電脳Mモグラ7.0」の仕様書です。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jra-pat.github.io/mmogura7.html">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css">
+<style>
+.tblwrap{overflow-x:auto;margin:8px 0 12px;}
+table.spec{border-collapse:collapse;width:100%;font-size:14px;margin:4px 0;}
+table.spec th,table.spec td{border:1px solid #ccc;padding:5px 8px;text-align:left;}
+table.spec th{background:#f3efe4;}
+article h3{margin-top:26px;}
+article h4{margin-top:18px;}
+</style>
+</head>
+<body>
+<header class="site">
+<h1><a href="index.html">明日は明日の馬が勝つ</a></h1>
+<p>馬券公開ブログ（ゆめもぐら）</p>
+<nav class="tabs"><a href="index.html">予想記事</a><a href="notable.html">注目馬記事</a><a href="list.html">注目馬一覧</a><a href="pog.html">POG</a><a href="records.html">馬券成績</a><a href="kaishu.html">回収率向上作戦</a></nav>
+</header>
+<main>
+<div class="card">
+<h2>復刻・電脳Mモグラ7.0 仕様書</h2>
+<article>
+<p>作成：2026年11月21日（モコ作成、ゆめもぐら監修待ち）目標：単勝・複勝合算の回収率 <strong>120%</strong>（検証で確認する目標値であり、保証値ではない）</p>
+<h3>1. 目的</h3>
+<p>2020年の自作予想ソフト「電脳Mモグラ6.0」の馬探しロジックを、現在の検証基盤（クリーン・シミュレーション）で再検証できる形に復刻する。6.0の設計思想はそのままに、2026年までに得られた検証結果（作戦A〜E、忘れられた実力馬、タイムランクA、Mの法則などのクリーン検証）をモコのアレンジとして組み込み、回収率120%を狙う選定システムとして定義する。</p>
+<h3>2. 系譜と設計思想</h3>
+<ul><li>Mモグラ1.0〜6.0は「Mの法則」をベースに作られた。6.0（2020年11月11日導入）で馬選の軸が転換した。</li><li>6.0の転換点（本人の言葉）：旧来の「苦から楽への条件替わりで、来れば美味しい馬」から、<strong>「強い馬だが人気がない」馬を実績重視で拾う</strong>馬選へ。</li><li>7.0はこの思想を現在の最重要観点「人気＜実力」と同一のものとして継承する。狙うのは、実力の証拠があるのに近走の凡走や条件替わりで人気を落とした馬である。</li><li>人気の判定は前日時点の情報で行う（6.0では前日0時オッズで汎化した。7.0では金曜夜〜前日の予想オッズを用いる）。</li></ul>
+<h3>3. 対象</h3>
+<ul><li>中央競馬（JRA）の平地全レース。障害は対象外。</li><li>地方競馬への展開は、中央での検証が済んでから別途検討する（7.0の初期仕様では対象外）。</li></ul>
+<h3>4. 選定ロジック</h3>
+<p>選定は「必須ゲート → 加点スコア → 除外チェック」の3段で行う。</p>
+<h4>4.1 必須ゲート（両方を満たすこと）</h4>
+<p><strong>ゲートA：実力の証拠（いずれか1つ以上）</strong></p>
+<ul><li>A1 圧勝実績：過去365日以内に、着差1.0秒差以上の勝利がある（6.0の最重視ファクタ）</li><li>A2 タイムランクA実績：対象レースより前に、ittai.net（Victory Road）のタイムランクAを記録したことがある（6.0〜Sモグラ期の補正タイム／スピード指数要素の現代版）</li><li>A3 上位クラス実績：重賞入着、オープン勝ち、現級より上のクラスでの好走など、上位クラスで通用した実績がある（「忘れられた実力馬」の実績要件）</li></ul>
+<p><strong>ゲートB：人気との乖離</strong></p>
+<ul><li>前走が5〜9着、または近走に説明のつく凡走があり、人気が実力に追いついていない</li><li>単勝オッズの目安は3.0〜15.0倍、人気の目安は3〜8番人気（前日時点の予想オッズで判定）</li><li>単勝1倍台の堅い本命は対象にしない。逆に、実績の裏付けのない人気薄も対象にしない</li></ul>
+<h4>4.2 加点スコア（加点式）</h4>
+<div class="tblwrap"><table class="spec"><tr><th>ファクタ</th><th>内容</th><th>点数</th></tr><tr><td>前走不利・末脚</td><td>前走で直線不利があった（前壁）、または前走上がり1〜2位で4着以下</td><td>+2</td></tr><tr><td>鞍上強化</td><td>前走から騎手が格上げになる乗り替わり（従来の角度Cの定義に準拠）</td><td>+2</td></tr><tr><td>圧勝の鮮度</td><td>A1の圧勝が180日以内</td><td>+1</td></tr><tr><td>バウンド</td><td>前走から距離短縮（バウンド短縮）。延長の場合は系統適性があるときに限る</td><td>+1</td></tr><tr><td>位置取りショック</td><td>前に行く位置取りへの変更、生涯初の逃げが見込めるなど</td><td>+1</td></tr><tr><td>逃げ損ね</td><td>前走、逃げられなかった逃げ馬</td><td>+1</td></tr><tr><td>系統適性</td><td>父・母父の系統（S系・L系・C系・M系）と今回の条件（枠・頭数・距離・間隔・鮮度）の相性がよい</td><td>+1</td></tr><tr><td>母好走条件</td><td>母の好走条件に合致する</td><td>+1</td></tr></table></div>
+<ul><li><strong>購入対象：合計3点以上</strong></li><li><strong>勝負レース候補：合計5点以上</strong>（週1勝負レースの候補プールに優先的に入れる）</li></ul>
+<h4>4.3 除外チェック（1つでも該当したら買わない）</h4>
+<ul><li>前走が接戦（僅差の攻防）で、間隔が詰まっているなど、ストレス・疲労の懸念が強い</li><li>連戦・連闘が続いていて状態の裏付けがない</li><li>ゲートAの「実力の証拠」が弱く、加点が人気薄の言い訳になっている（根拠のない穴狙いの排除）</li></ul>
+<h3>5. 馬券ルール</h3>
+<ul><li>検証フェーズでは、他の作戦と横並びで比較できるよう、仮想の単勝500円＋複勝500円で統一する。的中は3着以内。</li><li>実戦に投入する場合は、現在の枠組み（中央は週1勝負レース・1開催1,000円まで、PATの制限あり）に接続する。7.0のスコア5点以上を勝負レース候補の優先プールとする。</li></ul>
+<h3>6. データ要件</h3>
+<ul><li>出馬表・過去成績・払戻：netkeiba</li><li>タイムランクA実績：ittai.net の年別一覧（対象レースより前の日付の実績だけを使う。リーク防止のため日付で機械的に切り分ける）</li><li>人気・オッズ：前日時点の予想オッズ（確定オッズで選定し直さない）</li></ul>
+<h3>7. 検証計画</h3>
+<ul><li>期間：2021年12月1日〜2026年11月15日（他のシミュレーションと同じ期間）、月次で順に実行</li><li>手順：結果を見る前に選定を固定してCSVに保存し、netkeibaで精算する（クリーン手順）。汚染行は集計から除く</li><li>途中経過は月ごとに回収率向上作戦の記事と検証データページに反映する（他の作戦と同じ手順）</li><li>ファクタ別の成績も集計し、どのファクタが回収率を押し上げ／押し下げしているかを月ごとに見えるようにする</li></ul>
+<h3>8. 成功基準と改善ループ</h3>
+<ul><li>成功基準：全期間合算で回収率120%以上</li><li>正直な前提：これまでのクリーン検証で、通年120%を維持した作戦はまだない（忘れられた実力馬の合算101.8%、角度C 92.1%、タイムランクA 90.2%など）。120%は「最初から達成できる前提」ではなく、<strong>絞り込みで到達を狙う目標</strong>として置く</li><li>未達の場合は、ファクタ別成績をもとに加点の重みと購入閾値（3点）を見直し、再検証する。この反復自体を仕様の一部とする</li><li>サンプル数が少ないファクタの高回収率は割り引いて扱う（従来の運用どおり）</li></ul>
+<h3>9. 6.0 → 7.0 の主な変更点（モコのアレンジ）</h3>
+<div class="tblwrap"><table class="spec"><tr><th>項目</th><th>6.0</th><th>7.0</th></tr><tr><td>実力の証拠</td><td>圧勝ファクタ中心</td><td>圧勝＋タイムランクA＋上位クラス実績の3本柱</td></tr><tr><td>スピード指数</td><td>補正タイム（近5走105以上＆メンバー内1位）</td><td>タイムランクA実績に置き換え</td></tr><tr><td>人気の扱い</td><td>前日0時オッズで汎化</td><td>帯域（3.0〜15.0倍・3〜8番人気）を明示</td></tr><tr><td>選定方式</td><td>ソフトの内部ロジック</td><td>必須ゲート＋加点スコアで言語化・再現可能に</td></tr><tr><td>騎手</td><td>明示なし</td><td>鞍上強化を加点（検証で最も再現性の高い角度Cの知見）</td></tr><tr><td>除外条件</td><td>疲労評価は運用知</td><td>ストレス・疲労の除外を明文化</td></tr><tr><td>検証</td><td>実戦と年間検証</td><td>クリーン・シミュレーションで事前検証してから実戦へ</td></tr></table></div>
+<h3>10. 未決事項（本人の判断待ち）</h3>
+<ul><li>購入閾値（3点）・勝負候補閾値（5点）の初期値は仮置き。最初の数か月のバックテスト結果で調整する</li><li>地方競馬への展開可否</li><li>実戦投入の時期（検証で一定の成績が出てから）</li></ul>
+</article>
+<p class="back"><a href="kaishu.html">← 回収率向上作戦へ</a>　<a href="sim-data.html">検証データ（レース・馬ごとの一覧）へ →</a></p>
+</div>
+</main>
+<div id="waline" style="max-width:800px;margin:24px auto;padding:0 16px;"></div>
+<script type="module">
+import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+init({ el: '#waline', serverURL: 'https://jra-pat-waline.vercel.app', lang: 'jp', login: 'disable' });
+</script>
+<footer class="site">明日は明日の馬が勝つ／馬券公開ブログ</footer>
+<script data-goatcounter="https://jra-pat.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

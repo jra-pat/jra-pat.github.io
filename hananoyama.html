@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>花の山1.1 仕様書 | 明日は明日の馬が勝つ／馬券公開ブログ</title>
+<meta name="description" content="「人気＜実力」を過去の走りから取り出す「花の山1.1」の仕様書です。好走実績（P）と凡走理由（Q）の二段判定、1レース1頭の選び方、買い方、バックテスト結果と限界をまとめています。">
+<link rel="canonical" href="https://jra-pat.github.io/hananoyama.html">
+<meta property="og:title" content="花の山1.1 仕様書 | 明日は明日の馬が勝つ／馬券公開ブログ">
+<meta property="og:description" content="好走実績（P）と凡走理由（Q）の二段判定で「人気＜実力」を狙う「花の山1.1」の仕様書。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jra-pat.github.io/hananoyama.html">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css">
+<style>
+.tblwrap{overflow-x:auto;margin:8px 0 12px;}
+table.spec{border-collapse:collapse;width:100%;font-size:14px;margin:4px 0;}
+table.spec th,table.spec td{border:1px solid #ccc;padding:5px 8px;text-align:left;}
+table.spec th{background:#f3efe4;}
+article h3{margin-top:26px;}
+article h4{margin-top:18px;}
+</style>
+</head>
+<body>
+<header class="site">
+<h1><a href="index.html">明日は明日の馬が勝つ</a></h1>
+<p>馬券公開ブログ（ゆめもぐら）</p>
+<nav class="tabs"><a href="index.html">予想記事</a><a href="notable.html">注目馬記事</a><a href="list.html">注目馬一覧</a><a href="pog.html">POG</a><a href="records.html">馬券成績</a><a href="kaishu.html">回収率向上作戦</a></nav>
+</header>
+<main>
+<div class="card">
+<div class="date">2026年11月22日</div>
+<h2>花の山1.1 仕様書 〜人気＜実力の「戻り」だけを買う〜</h2>
+<article>
+<p>「人の行く裏に道あり花の山」。市場が人気を落とした馬の中から、以前に好走した条件へ戻るレースだけを拾う作戦です。オッズも人気も選定には使いません。判定は発走前に固定し、結果を見てから条件を変えないことを前提にしています。</p>
+
+<h3>1. ねらい</h3>
+<p>着順が悪い＝能力が落ちた、と市場は読みます。しかし「条件的に走れなかっただけ」の凡走は、条件が戻れば走ります。花の山1.1は、この「戻り」を次の2段で確認します。①その馬が今回と同条件で3着以内に入った実績を持っていること（P）、②直近2走がともに6着以下で、人気が落ちていること（Q）。両方が揃ったときだけ買います。</p>
+
+<h3>2. 対象レース</h3>
+<ul>
+<li>JRA平地（芝・ダート）。障害・地方・海外は対象外。</li>
+<li>8頭以上のレース。複勝は3着まで。</li>
+<li>2勝クラス以下は対象外（バックテストで回収率が基準を下回ったため）。</li>
+<li>1レースにつき1頭だけ選びます。該当なしは見送り。</li>
+</ul>
+
+<h3>3. P：実力の証拠（好走実績）</h3>
+<p>そのレースの日付より<strong>前</strong>の走りだけを使います。直近8走かつ365日以内に、次のすべてを満たす走りが1つ以上あること。</p>
+<div class="tblwrap">
+<table class="spec">
+<tr><th>項目</th><th>条件</th></tr>
+<tr><td>コース種別</td><td>今回と同じ（芝／ダート）</td></tr>
+<tr><td>距離</td><td>今回との差が200m以内</td></tr>
+<tr><td>クラス</td><td>今回と同クラス以上</td></tr>
+<tr><td>頭数</td><td>8頭以上</td></tr>
+<tr><td>着順</td><td>3着以内</td></tr>
+</table>
+</div>
+<p>複数該当する場合は<strong>最新の1走</strong>を「基準好走」として採用します。基準好走が複数レースにまたがる場合の突合は馬IDで行い、馬名での結合はしません（同名・改名の取り違えを避けるため）。戦績が取得できない馬は判定不能として見送ります。推測での補完はしません。</p>
+
+<h3>4. Q：凡走の理由（人気が落ちている）</h3>
+<p>直近2走が<strong>ともに6着以下</strong>であること。着順が不明な走がある場合はQ不成立として扱います。ここが「人気＜実力」の抽出部分で、好走実績があるのに直近2走で負けている＝市場が評価を下げている状態を意味します。</p>
+
+<h3>5. 1頭の選び方（タイブレーク）</h3>
+<p>同じレースでP+Q該当が複数いる場合は、上から順に機械的に決めます。</p>
+<ol>
+<li>直近2走の着順合計が小さい馬</li>
+<li>基準好走の日付が新しい馬</li>
+<li>基準好走のクラスが高い馬</li>
+<li>馬番が小さい馬</li>
+</ol>
+
+<h3>6. 買い方</h3>
+<ul>
+<li>単勝500円＋複勝500円（1レース1,000円）。</li>
+<li>見送り条件：P不成立／Q不成立／2勝クラス以下／8頭未満・障害・地方・海外／戦績取得不能／複勝払戻未確定。</li>
+<li>前走からの間隔が90日以上ある馬の除外は<strong>既定では行いません</strong>（外しても回収率が上がらなかったため）。</li>
+<li>オッズ・人気は使わない。判定は発走前に固定する。</li>
+</ul>
+
+<h3>7. バックテスト結果</h3>
+<p>netkeibaの確定払戻を使い、2021年〜2026年5月のレースで検証しました。すべて過去の結果に対する事後集計で、フォワード（実戦）の成績ではありません。</p>
+<div class="tblwrap">
+<table class="spec">
+<tr><th>構成</th><th>購入</th><th>回収率</th><th>複勝率</th><th>単勝率</th></tr>
+<tr><td>花の山1.1（全クラス）</td><td>4,734</td><td>102.8%</td><td>19.5%</td><td>5.5%</td></tr>
+<tr><td>3勝クラス以上に限定</td><td>1,454</td><td>111.7%</td><td>18.1%</td><td>5.8%</td></tr>
+<tr><td>参考：3勝以上の全馬均等買い</td><td>37,310</td><td>75.5%</td><td>20.7%</td><td>—</td></tr>
+</table>
+</div>
+<p>3勝クラス以上に絞った構成は回収率111.7%（95%信頼区間 83.2〜146.3%）でした。ただし<strong>これは全体の結果を見た後に「3勝以上が良さそう」と切り出した部分集合</strong>で、選択バイアスを含みます。同じ切り出しを繰り返せば必ず高い数字が出るため、この数字をそのまま期待値として扱うことはできません。</p>
+<p>券種別では、単勝のみ132.2%・複勝のみ91.2%でした。複勝単独では100%に届いておらず、回収率の源泉は「人気薄が1着を取ったときの配当」に依存しています。的中率が高いわけではなく（複勝率18.1%は全馬均等買いの20.7%より低い）、当たったときの配当が高いタイプです。最大連敗は24、最大ドローダウンは79,100円でした。</p>
+
+<h3>8. 限界と未検証</h3>
+<ul>
+<li>バックテストのみ。実戦（フォワード）の成績はまだありません。</li>
+<li>信頼区間が83.2〜146.3%と広く、真の回収率が100%未満である可能性を否定できません。</li>
+<li>直近2四半期（2026年1〜3月 74.0%、4〜6月 61.4%）は100%を割っています。</li>
+<li>GⅠ／GⅡ／GⅢ／L／OPの格別内訳は未集計です。</li>
+<li>5年分のデータベースは馬名キーで履歴を結合しており、実運用（馬IDキー）と厳密には同一ではありません。</li>
+<li>血統・調教・馬場差・前走不利は未実装です。</li>
+</ul>
+
+<h3>9. 今後の進め方</h3>
+<p>フォワードで100件（約4〜5ヶ月）を目安に途中経過を出し、300件で判断します。100件時点で回収率70%を下回る場合は中止、300件時点で信頼区間の下限が75%（全馬均等買いの水準）を下回る場合は棄却します。同時に「3勝クラス以上」と「全クラス」を並走させ、クラスで絞ることの寄与を前向きに測ります。</p>
+
+<h3>更新履歴</h3>
+<ul>
+<li>2026年11月22日：1.1 制定。2勝クラス以下を対象外に変更、Qを「直近2走ともに6着以下」に簡素化、タイブレークを直近2走着順合計に変更。</li>
+</ul>
+</article>
+<p class="back"><a href="kaishu.html">← 回収率向上作戦へ</a></p>
+</div>
+</main>
+<div id="waline" style="max-width:800px;margin:24px auto;padding:0 16px;"></div>
+<script type="module">
+import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+init({ el: '#waline', serverURL: 'https://jra-pat-waline.vercel.app', lang: 'jp', login: 'disable' });
+</script>
+<footer class="site">明日は明日の馬が勝つ／馬券公開ブログ</footer>
+<script data-goatcounter="https://jra-pat.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

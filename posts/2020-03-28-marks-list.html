@@ -11,7 +11,6 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://jra-pat.github.io/posts/2020-03-28-marks-list.html">
 <link rel="stylesheet" href="../style.css">
-<link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css">
 </head>
 <body>
 <header class="site">
@@ -794,11 +793,15 @@ BORDERCOLOR="white" BGCOLOR="#E8E8C8"><br>
 <p class="back"><a href="../index.html">← 予想記事一覧へ</a></p>
 </div>
 </main>
-<div id="waline" style="max-width:800px;margin:24px auto;padding:0 16px;"></div>
-<script type="module">
-import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
-init({ el: '#waline', serverURL: 'https://jra-pat-waline.vercel.app', lang: 'jp', login: 'disable' });
-</script>
+<section id="comments-static" style="max-width:800px;margin:24px auto;padding:0 16px;">
+<style>.static-comment{border-top:1px solid #ddd;padding:10px 4px}.static-comment .sc-head{margin:0 0 4px;color:#555;font-size:.9em}.static-comment .sc-body{white-space:normal;line-height:1.7}.static-comment .sc-replies{margin-left:24px;border-left:3px solid #eee;padding-left:12px}</style>
+<h3>コメント（2件）</h3>
+<div class="static-comments">
+<div class="static-comment" id="cmt-1383"><p class="sc-head"><strong>今日も勝ちたい</strong>　<time>2020年3月28日 02:23</time></p><div class="sc-body">こんばんは<br>ドバイの中止は本当に残念です。そのせいでダノンスマッシュの鞍上も変わってしまいましたね<br>しかし無観客でも競馬が出来ることに感謝です。日に日に増えていく感染者を見ると、騎手やスタッフから感染者が出て競馬が中止になってもおかしくないと思うので…<br><br>毎日杯は◎ストーンリッジ<br>前走も本命にしましたが、やはりこの血統は勢いと早熟さが売り。とりあえず惨敗するまでは買っておいて損はない気がします<br><br>日経賞はもちろん◎サトノクロニクル<br>ハーツの1枠というのはもちろん、AJCCで一叩きしたことでの変わり身にも期待しての本命です。毎日杯とこっちでサトノ2連勝もありそうです(笑</div></div>
+<div class="static-comment" id="cmt-1384"><p class="sc-head"><strong>ゆめもぐら</strong>　<time>2020年3月28日 08:27</time></p><div class="sc-body">&gt;&gt;1<br>おはようございます！<br>本当に関係者から感染が出ないことを祈るばかりです。<br><br>今日は東西共本命丸かぶりですね！！<br>応援しましょう。</div></div>
+</div>
+<p style="color:#8a94a6;font-size:.85em;">この記事のコメントは固定表示に切り替えました（新規投稿は受け付けていません）。</p>
+</section>
 <footer class="site">明日は明日の馬が勝つ／馬券公開ブログ</footer>
 <script data-goatcounter="https://jra-pat.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>

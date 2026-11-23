@@ -11,7 +11,6 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://jra-pat.github.io/posts/2018-05-13-result.html">
 <link rel="stylesheet" href="../style.css">
-<link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css">
 </head>
 <body>
 <header class="site">
@@ -116,11 +115,15 @@
 <p class="back"><a href="../index.html">← 予想記事一覧へ</a></p>
 </div>
 </main>
-<div id="waline" style="max-width:800px;margin:24px auto;padding:0 16px;"></div>
-<script type="module">
-import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
-init({ el: '#waline', serverURL: 'https://jra-pat-waline.vercel.app', lang: 'jp', login: 'disable' });
-</script>
+<section id="comments-static" style="max-width:800px;margin:24px auto;padding:0 16px;">
+<style>.static-comment{border-top:1px solid #ddd;padding:10px 4px}.static-comment .sc-head{margin:0 0 4px;color:#555;font-size:.9em}.static-comment .sc-body{white-space:normal;line-height:1.7}.static-comment .sc-replies{margin-left:24px;border-left:3px solid #eee;padding-left:12px}</style>
+<h3>コメント（2件）</h3>
+<div class="static-comments">
+<div class="static-comment" id="cmt-281"><p class="sc-head"><strong>来週も勝ちたい</strong>　<time>2018年5月13日 20:36</time></p><div class="sc-body">お疲れさまでした！<br>シニミニ系統の穴馬もわりと来ていますね。良かったです^^<br><br>アストルムはパイオニアバイオと同じような匂いがしますｗｗ これからもお世話になりそうですね！<br>そして普段競馬をやらない奥様が馬券を的中させているのに笑いました。来週はオークスということで、予想を聞いてみても面白いかもしれませんね</div></div>
+<div class="static-comment" id="cmt-282"><p class="sc-head"><strong>ゆめもぐら</strong>　<time>2018年5月13日 22:09</time></p><div class="sc-body">@来週も勝ちたいさん<br>お疲れ様です♪( ´θ｀)<br>ほんとシニスターミニスター様々です。<br><br>アストルム、そんな感じですね。<br>パイオニアバイオは勝ち上がりを買えなかったので、アストルムは買えるといいなぁ。<br><br>オークスも聞いてみますw</div></div>
+</div>
+<p style="color:#8a94a6;font-size:.85em;">この記事のコメントは固定表示に切り替えました（新規投稿は受け付けていません）。</p>
+</section>
 <footer class="site">明日は明日の馬が勝つ／馬券公開ブログ</footer>
 <script data-goatcounter="https://jra-pat.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>

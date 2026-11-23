@@ -11,7 +11,6 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://jra-pat.github.io/posts/2018-02-17-result.html">
 <link rel="stylesheet" href="../style.css">
-<link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css">
 </head>
 <body>
 <header class="site">
@@ -439,11 +438,15 @@
 <p class="back"><a href="../index.html">← 予想記事一覧へ</a></p>
 </div>
 </main>
-<div id="waline" style="max-width:800px;margin:24px auto;padding:0 16px;"></div>
-<script type="module">
-import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
-init({ el: '#waline', serverURL: 'https://jra-pat-waline.vercel.app', lang: 'jp', login: 'disable' });
-</script>
+<section id="comments-static" style="max-width:800px;margin:24px auto;padding:0 16px;">
+<style>.static-comment{border-top:1px solid #ddd;padding:10px 4px}.static-comment .sc-head{margin:0 0 4px;color:#555;font-size:.9em}.static-comment .sc-body{white-space:normal;line-height:1.7}.static-comment .sc-replies{margin-left:24px;border-left:3px solid #eee;padding-left:12px}</style>
+<h3>コメント（2件）</h3>
+<div class="static-comments">
+<div class="static-comment" id="cmt-90"><p class="sc-head"><strong>明日も勝ちたい</strong>　<time>2018年2月17日 20:41</time></p><div class="sc-body">いや～、グリエルマのレースは当たる気配しかなかったんですけどね(笑<br>それにしても鞍上も戻して、得意な条件で出走したのに掲示板が限界のグリエルマは少し気になりますね。やはり使いすぎなのでしょうか？<br><br>まぁ明日は今年初G1もありますし、切り替えて頑張りましょう♪</div></div>
+<div class="static-comment" id="cmt-91"><p class="sc-head"><strong>ゆめもぐら</strong>　<time>2018年2月18日 05:29</time></p><div class="sc-body">@明日も勝ちたいさん<br>私も勝つ気しかしなかったんですが^o^:<br>敗因はなんでしょうね。使い詰めか、前に行く戦法を取ったのが馬と折り合い付かなかったか。<br>またどこかで大掛けするとは思うんですが、少し狙いづらくなりましたね。<br><br>フェブラリーステークスは勝ちたいですねd(￣ ￣)<br>オリンピック期間中なので、サイン馬券派は、やはりゴールドドリームなのでしょうか笑<br>昨日京都最終のシルバードリームがゲートをくぐって除外になったのが今日への伏線でないといいですが。<br>この2頭、名前が似てるので何か関係あるのかと思いましたが、何の関係もないんですね笑</div></div>
+</div>
+<p style="color:#8a94a6;font-size:.85em;">この記事のコメントは固定表示に切り替えました（新規投稿は受け付けていません）。</p>
+</section>
 <footer class="site">明日は明日の馬が勝つ／馬券公開ブログ</footer>
 <script data-goatcounter="https://jra-pat.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>

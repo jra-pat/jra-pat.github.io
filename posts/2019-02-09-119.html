@@ -11,7 +11,6 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://jra-pat.github.io/posts/2019-02-09-119.html">
 <link rel="stylesheet" href="../style.css">
-<link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css">
 </head>
 <body>
 <header class="site">
@@ -81,11 +80,15 @@
 <p class="back"><a href="../index.html">← 予想記事一覧へ</a></p>
 </div>
 </main>
-<div id="waline" style="max-width:800px;margin:24px auto;padding:0 16px;"></div>
-<script type="module">
-import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
-init({ el: '#waline', serverURL: 'https://jra-pat-waline.vercel.app', lang: 'jp', login: 'disable' });
-</script>
+<section id="comments-static" style="max-width:800px;margin:24px auto;padding:0 16px;">
+<style>.static-comment{border-top:1px solid #ddd;padding:10px 4px}.static-comment .sc-head{margin:0 0 4px;color:#555;font-size:.9em}.static-comment .sc-body{white-space:normal;line-height:1.7}.static-comment .sc-replies{margin-left:24px;border-left:3px solid #eee;padding-left:12px}</style>
+<h3>コメント（2件）</h3>
+<div class="static-comments">
+<div class="static-comment" id="cmt-640"><p class="sc-head"><strong>明日も勝ちたい</strong>　<time>2019年2月9日 18:44</time></p><div class="sc-body">本日もお疲れ？様でした<br>取捨選択はほとんど成功していますがロードグラディオだけ残念でしたね<br>藤岡佑介騎手、昨年と同じでかなり乗れていますね。明日は1番人気がなかなか好走出来ない京都記念、ステイフーリッシュは(恐らく)1番人気になりそうですが果たしてどうなるか</div></div>
+<div class="static-comment" id="cmt-641"><p class="sc-head"><strong>ゆめもぐら</strong>　<time>2019年2月9日 20:28</time></p><div class="sc-body">＠明日も勝ちたいさん<br>ロードグラディオ粘り強かったですね。取捨選択はうまくいっていますが取成功率を上げていきたいところです。藤岡佑騎手いいですね。京都記念は旬の馬が少なくて却って難しいですね。<br>今週は２年連続の雪順延となりましたね。昨日は疲れていて予想できなかったので個人的には東京が延期になって助かりました笑<br>明日も頑張りましょう！</div></div>
+</div>
+<p style="color:#8a94a6;font-size:.85em;">この記事のコメントは固定表示に切り替えました（新規投稿は受け付けていません）。</p>
+</section>
 <footer class="site">明日は明日の馬が勝つ／馬券公開ブログ</footer>
 <script data-goatcounter="https://jra-pat.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>

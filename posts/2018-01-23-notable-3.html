@@ -11,7 +11,6 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://jra-pat.github.io/posts/2018-01-23-notable-3.html">
 <link rel="stylesheet" href="../style.css">
-<link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css">
 </head>
 <body>
 <header class="site">
@@ -83,11 +82,15 @@
 <p class="back"><a href="../index.html">← 予想記事一覧へ</a></p>
 </div>
 </main>
-<div id="waline" style="max-width:800px;margin:24px auto;padding:0 16px;"></div>
-<script type="module">
-import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
-init({ el: '#waline', serverURL: 'https://jra-pat-waline.vercel.app', lang: 'jp', login: 'disable' });
-</script>
+<section id="comments-static" style="max-width:800px;margin:24px auto;padding:0 16px;">
+<style>.static-comment{border-top:1px solid #ddd;padding:10px 4px}.static-comment .sc-head{margin:0 0 4px;color:#555;font-size:.9em}.static-comment .sc-body{white-space:normal;line-height:1.7}.static-comment .sc-replies{margin-left:24px;border-left:3px solid #eee;padding-left:12px}</style>
+<h3>コメント（2件）</h3>
+<div class="static-comments">
+<div class="static-comment" id="cmt-7"><p class="sc-head"><strong>今週も勝ちたい</strong>　<time>2018年1月23日 23:15</time></p><div class="sc-body">オールフォーラヴ、強い馬でしたね！<br>エンジンのかかりは遅いんですが、エンジンがかかれば楽々と前を行く馬を捉えきったのはスケールが違う走りだった思います。<br>ブログ記事の通り小回りでは割引する必要がありますが、阪神外回りや東京なら是非厚く買いたい馬ですね♪</div></div>
+<div class="static-comment" id="cmt-8"><p class="sc-head"><strong>ゆめもぐら</strong>　<time>2018年1月24日 07:14</time></p><div class="sc-body">@今週も勝ちたいさん<br>おはようございます♪( ´▽｀)<br>オールフォーラヴ強かったですね。<br>まだまだ強くなりそうな雰囲気を持った馬ですね！<br>エンジンの掛かりが遅いのは、若竹賞の レノヴァール のように騎乗でカバーできるといいな。<br>次回のレースが楽しみです。</div></div>
+</div>
+<p style="color:#8a94a6;font-size:.85em;">この記事のコメントは固定表示に切り替えました（新規投稿は受け付けていません）。</p>
+</section>
 <footer class="site">明日は明日の馬が勝つ／馬券公開ブログ</footer>
 <script data-goatcounter="https://jra-pat.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>

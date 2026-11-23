@@ -11,7 +11,6 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://jra-pat.github.io/posts/2020-06-06-412.html">
 <link rel="stylesheet" href="../style.css">
-<link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css">
 </head>
 <body>
 <header class="site">
@@ -36,11 +35,15 @@
 <p class="back"><a href="../index.html">← 予想記事一覧へ</a></p>
 </div>
 </main>
-<div id="waline" style="max-width:800px;margin:24px auto;padding:0 16px;"></div>
-<script type="module">
-import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
-init({ el: '#waline', serverURL: 'https://jra-pat-waline.vercel.app', lang: 'jp', login: 'disable' });
-</script>
+<section id="comments-static" style="max-width:800px;margin:24px auto;padding:0 16px;">
+<style>.static-comment{border-top:1px solid #ddd;padding:10px 4px}.static-comment .sc-head{margin:0 0 4px;color:#555;font-size:.9em}.static-comment .sc-body{white-space:normal;line-height:1.7}.static-comment .sc-replies{margin-left:24px;border-left:3px solid #eee;padding-left:12px}</style>
+<h3>コメント（2件）</h3>
+<div class="static-comments">
+<div class="static-comment" id="cmt-1535"><p class="sc-head"><strong>明日も勝ちたい</strong>　<time>2020年6月6日 23:58</time></p><div class="sc-body">パフォーマプロミス、お見事でした<br>いっくん無観客だと本当に強いですね<br><br>安田記念は対抗はアーモンドアイと決めているのですが本命が決まらず(大人しくアーモンドアイ本命にしろという話ですが笑)<br>雨がどのくらいまで馬場に影響するのかが気になりますね</div></div>
+<div class="static-comment" id="cmt-1536"><p class="sc-head"><strong>ゆめもぐら</strong>　<time>2020年6月7日 00:09</time></p><div class="sc-body">&gt;&gt;1<br>ありがとうございます。まさに首の上げ下げでしたね。<br>安田記念難しいですね。雨がかなり降りましたが東京競馬場の水はけは尋常じゃないですからね。スプリントよりの穴馬が内枠に入っていれば狙いたかったですが、外枠に固まりましたからね。難しいです。</div></div>
+</div>
+<p style="color:#8a94a6;font-size:.85em;">この記事のコメントは固定表示に切り替えました（新規投稿は受け付けていません）。</p>
+</section>
 <footer class="site">明日は明日の馬が勝つ／馬券公開ブログ</footer>
 <script data-goatcounter="https://jra-pat.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>

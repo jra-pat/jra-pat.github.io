@@ -11,7 +11,6 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://jra-pat.github.io/posts/2018-03-23-23.html">
 <link rel="stylesheet" href="../style.css">
-<link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css">
 </head>
 <body>
 <header class="site">
@@ -29,11 +28,16 @@
 <p class="back"><a href="../index.html">← 予想記事一覧へ</a></p>
 </div>
 </main>
-<div id="waline" style="max-width:800px;margin:24px auto;padding:0 16px;"></div>
-<script type="module">
-import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
-init({ el: '#waline', serverURL: 'https://jra-pat-waline.vercel.app', lang: 'jp', login: 'disable' });
-</script>
+<section id="comments-static" style="max-width:800px;margin:24px auto;padding:0 16px;">
+<style>.static-comment{border-top:1px solid #ddd;padding:10px 4px}.static-comment .sc-head{margin:0 0 4px;color:#555;font-size:.9em}.static-comment .sc-body{white-space:normal;line-height:1.7}.static-comment .sc-replies{margin-left:24px;border-left:3px solid #eee;padding-left:12px}</style>
+<h3>コメント（3件）</h3>
+<div class="static-comments">
+<div class="static-comment" id="cmt-179"><p class="sc-head"><strong>明日も勝ちたい</strong>　<time>2018年3月23日 18:23</time></p><div class="sc-body">ゴールドフラッグ1枠1番。これは本命馬券として購入ですかね？<br>明日と明後日も頑張りましょう！</div></div>
+<div class="static-comment" id="cmt-180"><p class="sc-head"><strong>ゆめもぐら</strong>　<time>2018年3月23日 23:24</time></p><div class="sc-body">@明日も勝ちたいさん<br>おぉ！1枠1番ですね。<br>馬場も渋っていますし、ここは有利に働くと見て本命勝負ですd(￣ ￣)</div></div>
+<div class="static-comment" id="cmt-181"><p class="sc-head"><strong>ゆめもぐら</strong>　<time>2018年3月24日 00:00</time></p><div class="sc-body">@明日も勝ちたいさん<br>毎日杯は勝ちたいさんのダービー候補ブラストワンピースの出走ですね！<br>私もMy注目馬を差し置いて本命ですw<br>楽しみですね！</div></div>
+</div>
+<p style="color:#8a94a6;font-size:.85em;">この記事のコメントは固定表示に切り替えました（新規投稿は受け付けていません）。</p>
+</section>
 <footer class="site">明日は明日の馬が勝つ／馬券公開ブログ</footer>
 <script data-goatcounter="https://jra-pat.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>

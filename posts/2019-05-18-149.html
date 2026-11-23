@@ -11,7 +11,6 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://jra-pat.github.io/posts/2019-05-18-149.html">
 <link rel="stylesheet" href="../style.css">
-<link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css">
 </head>
 <body>
 <header class="site">
@@ -295,11 +294,15 @@
 <p class="back"><a href="../index.html">← 予想記事一覧へ</a></p>
 </div>
 </main>
-<div id="waline" style="max-width:800px;margin:24px auto;padding:0 16px;"></div>
-<script type="module">
-import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
-init({ el: '#waline', serverURL: 'https://jra-pat-waline.vercel.app', lang: 'jp', login: 'disable' });
-</script>
+<section id="comments-static" style="max-width:800px;margin:24px auto;padding:0 16px;">
+<style>.static-comment{border-top:1px solid #ddd;padding:10px 4px}.static-comment .sc-head{margin:0 0 4px;color:#555;font-size:.9em}.static-comment .sc-body{white-space:normal;line-height:1.7}.static-comment .sc-replies{margin-left:24px;border-left:3px solid #eee;padding-left:12px}</style>
+<h3>コメント（2件）</h3>
+<div class="static-comments">
+<div class="static-comment" id="cmt-853"><p class="sc-head"><strong>明日も勝ちたい</strong>　<time>2019年5月18日 19:49</time></p><div class="sc-body">本日は忙しすぎて競馬出来ず(汗<br>明日のオークスに向けて力を溜めたと思っておきます(笑<br><br>そしてゆめもぐらさんの超大人買い把握しました！笑<br>結果を見ると、わりと狙い目は当たってる気がしますね。回収率を見てもまずまずなのでこれは泣く必要がないのでは…？<br>明日に向けて良い流れが作れたと思うべきですよ(笑</div></div>
+<div class="static-comment" id="cmt-854"><p class="sc-head"><strong>ゆめもぐら</strong>　<time>2019年5月19日 07:13</time></p><div class="sc-body">&gt;&gt;1<br>お疲れ様です。溜めた力でオークス当てましょう！<br>後ほど集計しますが昨日はプラスでした♪<br>私は今日も大人買い継続で行こうと思います笑</div></div>
+</div>
+<p style="color:#8a94a6;font-size:.85em;">この記事のコメントは固定表示に切り替えました（新規投稿は受け付けていません）。</p>
+</section>
 <footer class="site">明日は明日の馬が勝つ／馬券公開ブログ</footer>
 <script data-goatcounter="https://jra-pat.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>

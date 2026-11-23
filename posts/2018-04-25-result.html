@@ -11,7 +11,6 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://jra-pat.github.io/posts/2018-04-25-result.html">
 <link rel="stylesheet" href="../style.css">
-<link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css">
 </head>
 <body>
 <header class="site">
@@ -583,11 +582,15 @@
 <p class="back"><a href="../index.html">← 予想記事一覧へ</a></p>
 </div>
 </main>
-<div id="waline" style="max-width:800px;margin:24px auto;padding:0 16px;"></div>
-<script type="module">
-import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
-init({ el: '#waline', serverURL: 'https://jra-pat-waline.vercel.app', lang: 'jp', login: 'disable' });
-</script>
+<section id="comments-static" style="max-width:800px;margin:24px auto;padding:0 16px;">
+<style>.static-comment{border-top:1px solid #ddd;padding:10px 4px}.static-comment .sc-head{margin:0 0 4px;color:#555;font-size:.9em}.static-comment .sc-body{white-space:normal;line-height:1.7}.static-comment .sc-replies{margin-left:24px;border-left:3px solid #eee;padding-left:12px}</style>
+<h3>コメント（2件）</h3>
+<div class="static-comments">
+<div class="static-comment" id="cmt-252"><p class="sc-head"><strong>日曜も勝ちたい</strong>　<time>2018年4月28日 00:28</time></p><div class="sc-body">お疲れさまです！<br>票でまとめると分かりやすいですね。そしてそこそこ万馬券が出てることにも驚きですｗｗ<br><br>明日はリアルが忙しく競馬は出来なさそうですが、青葉賞は色んな意味で楽しみです。<br>エタリオウ、ダノンマジェスティ、オブセッションと非常に気性に問題のある馬が揃って後ろ2頭は人気も集めそうなので、ひょっとしたら波乱があるかも...？</div></div>
+<div class="static-comment" id="cmt-253"><p class="sc-head"><strong>ゆめもぐら</strong>　<time>2018年4月28日 01:42</time></p><div class="sc-body">@日曜も勝ちたいさん<br>こんばんは！青葉賞、確かにその3頭は危ない人気馬ですね。力を発揮して突き抜ける可能性もあるし、荒ぶって大凡走の可能性も。こういうときは「ひょっとしたら波乱」の方に賭けたくなるところですね。私はMy注目馬のゴーフォザサミットと、穴馬探しの馬を絡めて穴目に期待したいなと思います。<br>天皇賞・春も楽しみですね！デムルメ中穴、武不在。何かドラマがありそうな気がしています。私はチェスナットコート、トーセンバジルあたりに期待してます。<br>私もそこそこリアルが忙しいのですが、意地でも競馬はやるスタンスで、いつも通り今日中に馬券はすべてなんとかして寝ますｗ明日はラジオ聞きながら仕事の予定。<br>勝ちたいさんもお疲れ様です。ではでは。</div></div>
+</div>
+<p style="color:#8a94a6;font-size:.85em;">この記事のコメントは固定表示に切り替えました（新規投稿は受け付けていません）。</p>
+</section>
 <footer class="site">明日は明日の馬が勝つ／馬券公開ブログ</footer>
 <script data-goatcounter="https://jra-pat.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>

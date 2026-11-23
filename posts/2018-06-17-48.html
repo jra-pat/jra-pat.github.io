@@ -11,7 +11,6 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://jra-pat.github.io/posts/2018-06-17-48.html">
 <link rel="stylesheet" href="../style.css">
-<link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css">
 </head>
 <body>
 <header class="site">
@@ -101,11 +100,15 @@
 <p class="back"><a href="../index.html">← 予想記事一覧へ</a></p>
 </div>
 </main>
-<div id="waline" style="max-width:800px;margin:24px auto;padding:0 16px;"></div>
-<script type="module">
-import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
-init({ el: '#waline', serverURL: 'https://jra-pat-waline.vercel.app', lang: 'jp', login: 'disable' });
-</script>
+<section id="comments-static" style="max-width:800px;margin:24px auto;padding:0 16px;">
+<style>.static-comment{border-top:1px solid #ddd;padding:10px 4px}.static-comment .sc-head{margin:0 0 4px;color:#555;font-size:.9em}.static-comment .sc-body{white-space:normal;line-height:1.7}.static-comment .sc-replies{margin-left:24px;border-left:3px solid #eee;padding-left:12px}</style>
+<h3>コメント（2件）</h3>
+<div class="static-comments">
+<div class="static-comment" id="cmt-330"><p class="sc-head"><strong>来週も勝ちたい</strong>　<time>2018年6月17日 21:52</time></p><div class="sc-body">本日もお疲れ様でした！<br>両重賞共惜しい結果ですね。相手抜け…<br><br>グリムはスタートこそ良かったんですが直線でスペースがありませんでしたね。次走に期待したいです<br>しかしルヴァンスレーヴは強かったですね。逆らえません。これに勝ったドンフォルティスの評価もまた上がりました。3歳ダート戦線も楽しみです</div></div>
+<div class="static-comment" id="cmt-331"><p class="sc-head"><strong>明日も勝ちたい</strong>　<time>2018年6月19日 09:25</time></p><div class="sc-body">@来週も勝ちたいさん<br>お疲れ様でした！<br>ルヴァンスレーヴは強かったですね。今年のダート路線は例年以上に楽しいです。<br>グリム前が壁でしたね。残念です。<br>セイウンコウセイは交わされたかなと思いましたが、ギリギリ粘ってましたね。<br>宝塚記念はレベルが拮抗していて難しいですね。どんな結果が待っているか楽しみです。</div></div>
+</div>
+<p style="color:#8a94a6;font-size:.85em;">この記事のコメントは固定表示に切り替えました（新規投稿は受け付けていません）。</p>
+</section>
 <footer class="site">明日は明日の馬が勝つ／馬券公開ブログ</footer>
 <script data-goatcounter="https://jra-pat.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>

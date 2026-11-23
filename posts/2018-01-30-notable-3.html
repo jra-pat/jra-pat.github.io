@@ -11,7 +11,6 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://jra-pat.github.io/posts/2018-01-30-notable-3.html">
 <link rel="stylesheet" href="../style.css">
-<link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css">
 </head>
 <body>
 <header class="site">
@@ -29,11 +28,15 @@
 <p class="back"><a href="../index.html">← 予想記事一覧へ</a></p>
 </div>
 </main>
-<div id="waline" style="max-width:800px;margin:24px auto;padding:0 16px;"></div>
-<script type="module">
-import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
-init({ el: '#waline', serverURL: 'https://jra-pat-waline.vercel.app', lang: 'jp', login: 'disable' });
-</script>
+<section id="comments-static" style="max-width:800px;margin:24px auto;padding:0 16px;">
+<style>.static-comment{border-top:1px solid #ddd;padding:10px 4px}.static-comment .sc-head{margin:0 0 4px;color:#555;font-size:.9em}.static-comment .sc-body{white-space:normal;line-height:1.7}.static-comment .sc-replies{margin-left:24px;border-left:3px solid #eee;padding-left:12px}</style>
+<h3>コメント（2件）</h3>
+<div class="static-comments">
+<div class="static-comment" id="cmt-31"><p class="sc-head"><strong>来週も勝ちたい</strong>　<time>2018年1月30日 13:38</time></p><div class="sc-body">ミッキーワイルド、新馬戦のときとは別物の競馬でしたね。<br>あそこから届くのかって直線見ていましたが全く伸びて来ずに見せ場なし汗<br><br>短距離と決めつけず、京都か阪神の1800mあたりで走ってみるのもありだと思いました。とりあえず、次走でこのレースが原因で人気が大幅に落ちるようなら狙ってみてもいい馬かもしれませんね。<br>あの新馬戦を見ればポテンシャル自体は高いはずなので(笑</div></div>
+<div class="static-comment" id="cmt-32"><p class="sc-head"><strong>ゆめもぐら</strong>　<time>2018年1月31日 00:01</time></p><div class="sc-body">@来週も勝ちたいさん<br>ギャロップの騎手コメントでは馬場を要因に挙げていますが本当のところわかりませんね。<br>なかなか狙いがいがある馬かもしれませんね♪( ´▽｀)楽しみです。</div></div>
+</div>
+<p style="color:#8a94a6;font-size:.85em;">この記事のコメントは固定表示に切り替えました（新規投稿は受け付けていません）。</p>
+</section>
 <footer class="site">明日は明日の馬が勝つ／馬券公開ブログ</footer>
 <script data-goatcounter="https://jra-pat.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>

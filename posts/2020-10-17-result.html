@@ -11,7 +11,6 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://jra-pat.github.io/posts/2020-10-17-result.html">
 <link rel="stylesheet" href="../style.css">
-<link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css">
 </head>
 <body>
 <header class="site">
@@ -127,11 +126,15 @@
 <p class="back"><a href="../index.html">← 予想記事一覧へ</a></p>
 </div>
 </main>
-<div id="waline" style="max-width:800px;margin:24px auto;padding:0 16px;"></div>
-<script type="module">
-import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
-init({ el: '#waline', serverURL: 'https://jra-pat-waline.vercel.app', lang: 'jp', login: 'disable' });
-</script>
+<section id="comments-static" style="max-width:800px;margin:24px auto;padding:0 16px;">
+<style>.static-comment{border-top:1px solid #ddd;padding:10px 4px}.static-comment .sc-head{margin:0 0 4px;color:#555;font-size:.9em}.static-comment .sc-body{white-space:normal;line-height:1.7}.static-comment .sc-replies{margin-left:24px;border-left:3px solid #eee;padding-left:12px}</style>
+<h3>コメント（2件）</h3>
+<div class="static-comments">
+<div class="static-comment" id="cmt-1745"><p class="sc-head"><strong>明日も勝ちたい</strong>　<time>2020年10月17日 17:43</time></p><div class="sc-body">お疲れ様でした！<br>やはり重馬場適性が高いですね…笑<br><br>府中牝馬は少頭数でしたがまさかの大荒れ<br>明日の秋華賞は馬場が回復して稍重くらいにはなりそうですが、今日の結果を見ると馬場が重くなると何が起こるか分かりませんね笑</div></div>
+<div class="static-comment" id="cmt-1746"><p class="sc-head"><strong>ゆめもぐら</strong>　<time>2020年10月17日 21:13</time></p><div class="sc-body">&gt;&gt;1<br>今後も重馬場適正を高めて行きたいと思います笑<br>府中牝馬は人気馬総崩れで荒れましたね。<br>京都はコーナーでバラけるレースが多かったですね。<br>明日は少し乾いて傾向変わるでしょうか。<br>無敗の三冠馬が誕生なるのか、伏兵がサプライズを招くのか楽しみです。<br>明日も頑張りましょう！</div></div>
+</div>
+<p style="color:#8a94a6;font-size:.85em;">この記事のコメントは固定表示に切り替えました（新規投稿は受け付けていません）。</p>
+</section>
 <footer class="site">明日は明日の馬が勝つ／馬券公開ブログ</footer>
 <script data-goatcounter="https://jra-pat.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>

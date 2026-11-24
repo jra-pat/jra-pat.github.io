@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>人生苦楽2.0 仕様書 | 明日は明日の馬が勝つ／馬券公開ブログ</title>
+<meta name="description" content="前走で前に行って力尽きた馬を3勝クラス以上で狙う「人生苦楽2.0」の仕様書です。条件・除外規定・タイブレーク・バックテスト結果（1,348件・回収率118.63%）と限界をまとめています。">
+<link rel="canonical" href="https://jra-pat.github.io/jinsei.html">
+<meta property="og:title" content="人生苦楽2.0 仕様書 | 明日は明日の馬が勝つ／馬券公開ブログ">
+<meta property="og:description" content="前走で前に行って力尽きた馬を3勝クラス以上で狙う「人生苦楽2.0」の仕様書です。条件・除外規定・タイブレーク・バックテスト結果（1,348件・回収率118.63%）と限界をまとめています。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jra-pat.github.io/jinsei.html">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css">
+<style>
+.tblwrap{overflow-x:auto;margin:8px 0 12px;}
+table.spec{border-collapse:collapse;width:100%;font-size:14px;margin:4px 0;}
+table.spec th,table.spec td{border:1px solid #ccc;padding:5px 8px;text-align:left;}
+table.spec th{background:#f3efe4;}
+article h3{margin-top:26px;}
+article h4{margin-top:18px;}
+</style>
+</head>
+<body>
+<header class="site">
+<h1><a href="index.html">明日は明日の馬が勝つ</a></h1>
+<p>馬券公開ブログ（ゆめもぐら）</p>
+<nav class="tabs"><a href="index.html">予想記事</a><a href="notable.html">注目馬記事</a><a href="list.html">注目馬一覧</a><a href="pog.html">POG</a><a href="records.html">馬券成績</a><a href="kaishu.html">回収率向上作戦</a></nav>
+</header>
+<main>
+<div class="card">
+<div class="date">2026年11月24日</div>
+<h2>人生苦楽2.0 仕様書 〜前で潰れた馬が、楽に運べる今回を買う〜</h2>
+<article>
+
+<p>前走で前に行って力尽きた馬が、今回は相手関係の変化で楽に運べるケースを拾う作戦です。仕様は2026年11月23日に凍結しました。能力の高さではなく、前走の負け方と今回の条件の一致だけを見ます。オッズ・人気・馬場・パドックは使いません。数値はすべて凍結版仕様書と明細CSV（1,348件）の再計算値です。</p>
+
+<h3>1. ルールの決め方</h3>
+<p>条件は、過去27年分のデータで候補ルールを多数比較し、結果を見る前に決めた3点（買い目が1,300件以上／前半期間の回収率100%以上／後半期間の回収率100%以上）を満たすもののうち、悪い側の回収率が最も高いものを採用しました。「全期間で最も高いもの」は選んでいません。</p>
+
+<h3>2. 対象レース</h3>
+<ul>
+<li>JRA平地（芝・ダート）。障害・地方・海外は対象外。直線コースは判定不能のため不成立。</li>
+<li>クラスは3勝クラス以上。今回の出走頭数が8頭以上。</li>
+<li>1レースにつき最大1頭。オッズ・人気は不使用。</li>
+</ul>
+
+<h3>3. 前走条件（P1〜P6）</h3>
+<div class="tblwrap"><table class="spec">
+<tr><th>#</th><th>条件</th></tr>
+<tr><td>P1</td><td>前走が今回と同コース種別（芝／ダート）</td></tr>
+<tr><td>P2</td><td>前走との距離差が±200m以内</td></tr>
+<tr><td>P3</td><td>前走から365日以内</td></tr>
+<tr><td>P4</td><td>前走の最初のコーナー通過順位が1〜3番手</td></tr>
+<tr><td>P5</td><td>前走の着順が6着以下</td></tr>
+<tr><td>P6</td><td>前走の着差が1.0秒以上</td></tr>
+</table></div>
+
+<h3>4. 基準好走（Q1〜Q6）</h3>
+<p>直近8走のうち前走を除く7走の中に、365日以内・同コース種別・距離差±200m以内・8頭以上・最初のコーナー3番手以内・3着以内の走（基準好走）が1走以上あること。</p>
+
+<h3>5. 除外規定</h3>
+<ul>
+<li>除外A：前走の1着との着差が1.5秒以上なら落とす。</li>
+<li>除外B：今回のクラスが3勝クラス未満なら対象外（対象レースの絞り込みで実施）。</li>
+<li>クラス区分が判定できない場合は、安全側で除外します。</li>
+</ul>
+
+<h3>6. 1頭の選び方（タイブレーク）</h3>
+<ol>
+<li>同型頭数の前走比増減が小さい馬</li>
+<li>前走の着差が小さい馬</li>
+<li>基準好走のクラスが高い馬</li>
+<li>基準好走の着順が小さい馬</li>
+<li>基準好走の日付が新しい馬</li>
+<li>基準好走の本数が多い馬</li>
+<li>馬番が小さい馬</li>
+</ol>
+
+<h3>7. 買い方</h3>
+<ul><li>単勝500円＋複勝500円（1頭1,000円）。1レース1頭のみ。見送りのレースは投資しません。</li></ul>
+
+<h3>8. バックテスト結果</h3>
+<div class="tblwrap"><table class="spec">
+<tr><th>指標</th><th>値</th></tr>
+<tr><td>母集団／買い目</td><td>83,842レース／1,348件（1999年1月6日〜2026年5月31日）</td></tr>
+<tr><td>単複回収率</td><td>118.63%（投資1,348,000円／払戻1,599,100円／損益+251,100円）</td></tr>
+<tr><td>勝率／複勝率</td><td>6.53%／20.03%</td></tr>
+<tr><td>前半（1999〜2012年）</td><td>513件・120.12%</td></tr>
+<tr><td>後半（2013〜2026年5月）</td><td>835件・117.71%</td></tr>
+<tr><td>上位3件を除く</td><td>105.21%</td></tr>
+<tr><td>95%区間</td><td>94.67〜146.31%</td></tr>
+<tr><td>最大ドローダウン／最大連敗</td><td>119,150円／22連敗</td></tr>
+</table></div>
+<p>選定した全1,348件の一覧は<a href="sim-data.html#jinsei20">検証データのページ</a>に載せています（明細CSVに競馬場・レース名の列がないため、コース・距離・クラスで表示しています）。</p>
+
+<h3>9. 限界（仕様書自身の注意書き）</h3>
+<ul>
+<li><strong>厳密なアウトオブサンプルではありません。</strong>クラス条件は全期間データから見つけた切り口で、採用基準も両期間の数字を見て決めています。真の外挿テストは2026年6月以降のフォワードのみです。</li>
+<li>多重検定のリスクがあります。95%区間の下限94.67%が100%を割るのはその表れです。</li>
+<li>件数が少なく、年49.2件・月4件ほどです。1件の的中で年間損益が反転する規模です。</li>
+<li><strong>ダートが明確な弱点です（411件・89.33%）。</strong>芝は131.48%ですが、件数基準に届かないため芝限定は採用していません。降級馬も36件・70.42%と弱い区分です。</li>
+<li>ローリング5年では8区間中2区間が100%未満で、年のばらつきは極端に大きい（100%超は27年中12年）。どの期間を切り取っても黒字、ではありません。</li>
+<li>2007〜2008年ごろの旧年代データには欠損があります。</li>
+</ul>
+
+<h3>更新履歴</h3>
+<ul><li>2026年11月24日：人生苦楽2.0（凍結版・2026年11月23日凍結）の仕様書を公開しました。</li></ul>
+
+</article>
+<p class="back"><a href="kaishu.html">← 回収率向上作戦へ</a></p>
+</div>
+</main>
+<div id="waline" style="max-width:800px;margin:24px auto;padding:0 16px;"></div>
+<script type="module">
+import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+init({ el: '#waline', serverURL: 'https://jra-pat-waline.vercel.app', lang: 'jp', login: 'disable' });
+</script>
+<footer class="site">明日は明日の馬が勝つ／馬券公開ブログ</footer>
+<script data-goatcounter="https://jra-pat.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

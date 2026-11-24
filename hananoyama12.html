@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>花の山1.2 仕様書 | 明日は明日の馬が勝つ／馬券公開ブログ</title>
+<meta name="description" content="「花の山1.1」の勝者に着順パターンの追加フィルタをかけた「花の山1.2」の仕様書です。条件・タイブレーク・バックテスト結果（4,279件・回収率106.57%）と限界をまとめています。">
+<link rel="canonical" href="https://jra-pat.github.io/hananoyama12.html">
+<meta property="og:title" content="花の山1.2 仕様書 | 明日は明日の馬が勝つ／馬券公開ブログ">
+<meta property="og:description" content="「花の山1.1」の勝者に着順パターンの追加フィルタをかけた「花の山1.2」の仕様書です。条件・タイブレーク・バックテスト結果（4,279件・回収率106.57%）と限界をまとめています。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jra-pat.github.io/hananoyama12.html">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css">
+<style>
+.tblwrap{overflow-x:auto;margin:8px 0 12px;}
+table.spec{border-collapse:collapse;width:100%;font-size:14px;margin:4px 0;}
+table.spec th,table.spec td{border:1px solid #ccc;padding:5px 8px;text-align:left;}
+table.spec th{background:#f3efe4;}
+article h3{margin-top:26px;}
+article h4{margin-top:18px;}
+</style>
+</head>
+<body>
+<header class="site">
+<h1><a href="index.html">明日は明日の馬が勝つ</a></h1>
+<p>馬券公開ブログ（ゆめもぐら）</p>
+<nav class="tabs"><a href="index.html">予想記事</a><a href="notable.html">注目馬記事</a><a href="list.html">注目馬一覧</a><a href="pog.html">POG</a><a href="records.html">馬券成績</a><a href="kaishu.html">回収率向上作戦</a></nav>
+</header>
+<main>
+<div class="card">
+<div class="date">2026年11月24日</div>
+<h2>花の山1.2 仕様書 〜1.1の勝者に、負け方のフィルタをかける〜</h2>
+<article>
+
+<p>「花の山1.1」の候補から、直近の負け方に特定のパターンがある馬だけに絞った版です。仕様は2026年11月23日に凍結しました。オッズ・人気は選定に使いません。数値はすべて凍結版仕様書と明細CSV（4,279件）の再計算値で、両者は全件一致しています。</p>
+
+<h3>1. ねらい</h3>
+<p>1.1の候補（好走した条件に戻る馬）の中でも、前走・前々走の着順の組み合わせが「力尽きた形」になっている馬は、人気の落ち方が大きく、戻ったときの配当も大きくなります。1.2は、1.1で1頭に絞った勝者にだけ追加のフィルタをかけ、当てはまるレースだけを買います。</p>
+
+<h3>2. 対象レース</h3>
+<ul>
+<li>JRA平地（芝・ダート）の全レース。全クラス対象（未勝利・新馬を含む）。障害・地方・海外は対象外。</li>
+<li>判定に使うのは発走前に確定する情報のみ。オッズ・人気は一切使いません。</li>
+<li>1レースにつき1頭。フィルタに当てはまらなければ、次点に繰り上げず見送ります。</li>
+</ul>
+
+<h3>3. 前走条件（P）</h3>
+<div class="tblwrap"><table class="spec">
+<tr><th>#</th><th>条件</th></tr>
+<tr><td>P1</td><td>前走が今回と同コース種別（芝／ダート）</td></tr>
+<tr><td>P2</td><td>前走との距離差が±200m以内</td></tr>
+<tr><td>P3</td><td>前走が365日以内</td></tr>
+<tr><td>P4</td><td>前走で最初のコーナーを1〜3番手で通過</td></tr>
+<tr><td>P5</td><td>前走6着以下、かつ1着との着差1.0秒以上</td></tr>
+</table></div>
+
+<h3>4. 基準好走（Q）</h3>
+<p>前走を除く直近7走の中に、同コース種別・距離差±200m以内・365日以内・8頭以上・最初のコーナー1〜3番手・3着以内の走（基準好走）が1走以上あること。</p>
+
+<h3>5. 追加条件（1.2のフィルタ）</h3>
+<p>タイブレークで決めた1.1の勝者について、次のどれか1つでも当てはまれば購入対象とします。</p>
+<div class="tblwrap"><table class="spec">
+<tr><th>記号</th><th>条件</th></tr>
+<tr><td>A（核）</td><td>前々走6着 × 基準好走が281日以上前</td></tr>
+<tr><td>①</td><td>前走9着 × 前々走7着</td></tr>
+<tr><td>②</td><td>前々走6〜7着 × 基準好走が330日以上前</td></tr>
+<tr><td>④</td><td>前走10着 × 前々走6着</td></tr>
+<tr><td>⑥</td><td>前走8〜10着 × 前々走6着</td></tr>
+<tr><td>⑦</td><td>前走9着 × 前々走7〜8着</td></tr>
+</table></div>
+<p>A単独は962件で回収率118.01%でした。</p>
+
+<h3>6. 1頭の選び方（タイブレーク）</h3>
+<ol>
+<li>同型（前走で最初のコーナー1〜3番手）頭数の前走比増減が小さい馬</li>
+<li>前走の着差が小さい馬</li>
+<li>基準好走のクラスが高い馬</li>
+<li>基準好走の着順が小さい馬</li>
+<li>基準好走の日付が新しい馬</li>
+<li>基準好走の本数が多い馬</li>
+<li>馬番が小さい馬</li>
+</ol>
+
+<h3>7. 買い方</h3>
+<ul><li>単勝500円＋複勝500円（1頭1,000円）。1レース1頭のみ。</li></ul>
+
+<h3>8. バックテスト結果</h3>
+<div class="tblwrap"><table class="spec">
+<tr><th>指標</th><th>値</th></tr>
+<tr><td>買い目</td><td>4,279件（1999年1月5日〜2026年5月31日）</td></tr>
+<tr><td>単複回収率</td><td>106.57%（投資4,279,000円／払戻4,560,200円／収支+281,200円）</td></tr>
+<tr><td>単勝的中率</td><td>6.52%</td></tr>
+<tr><td>複勝的中率</td><td>21.80%</td></tr>
+<tr><td>訓練期間（〜2015年）</td><td>2,599件・101.67%</td></tr>
+<tr><td>検証期間（2016年〜）</td><td>1,680件・114.15%</td></tr>
+</table></div>
+<p>明細CSVに着順の列がないため、戦績（1-2-3-着外）や連対率・勝率は出せません。選定した全4,279件の一覧は<a href="sim-data.html#hananoyama12">検証データのページ</a>に載せています。</p>
+
+<h3>9. 限界（仕様書自身の注意書き）</h3>
+<ul>
+<li><strong>選抜に訓練・検証の両期間を使った楽観的な値です。</strong>106.57%をそのまま期待値として扱うことはできません。</li>
+<li>95%区間の下限は93.04%で、100%を下回る可能性を否定できません。上位3件を除くと99.25%まで下がります。</li>
+<li>2026年11月24日の独立再選定では、仕様書の文面どおりに判定すると明細CSVの買い目を再現できませんでした。仕様書の文面と、明細を生成したプログラムの間に乖離があると考えられます。上の数字は明細CSVの集計であり、文面どおりのルールで今後も同じ成績になる保証はありません。</li>
+<li>明細CSVの判定条件欄には、②のみが発火した360件が「⑦」と記録されている食い違いがあります（買う／買わないの判定には影響しません）。前走着順が欠けた行も7件あります。</li>
+</ul>
+
+<h3>更新履歴</h3>
+<ul><li>2026年11月24日：花の山1.2（凍結版・2026年11月23日凍結）の仕様書を公開しました。</li></ul>
+
+</article>
+<p class="back"><a href="kaishu.html">← 回収率向上作戦へ</a></p>
+</div>
+</main>
+<div id="waline" style="max-width:800px;margin:24px auto;padding:0 16px;"></div>
+<script type="module">
+import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+init({ el: '#waline', serverURL: 'https://jra-pat-waline.vercel.app', lang: 'jp', login: 'disable' });
+</script>
+<footer class="site">明日は明日の馬が勝つ／馬券公開ブログ</footer>
+<script data-goatcounter="https://jra-pat.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

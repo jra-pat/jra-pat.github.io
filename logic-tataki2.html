@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claude式・叩き二走目 の考え方 | 明日は明日の馬が勝つ／馬券公開ブログ</title>
+<meta name="description" content="作戦の考え方（ロジックの説明）です。判定の細かい条件は公開していないため、この説明だけでは選定を再現することはできません。">
+<link rel="canonical" href="https://jra-pat.github.io/logic-tataki2.html">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css">
+<style>article h3{margin-top:26px;}</style>
+</head>
+<body>
+<header class="site">
+<h1><a href="index.html">明日は明日の馬が勝つ</a></h1>
+<p>馬券公開ブログ（ゆめもぐら）</p>
+<nav class="tabs"><a href="index.html">予想記事</a><a href="notable.html">注目馬記事</a><a href="list.html">注目馬一覧</a><a href="pog.html">POG</a><a href="records.html">馬券成績</a><a href="kaishu.html">回収率向上作戦</a></nav>
+</header>
+<main>
+<div class="card">
+<h2>Claude式・叩き二走目 の考え方</h2>
+<article>
+<p>休み明けの復帰戦で、着順以上に内容のある走りができた馬の「次」を狙う作戦です。Claudeが考案した仕様を、こちらで実装して検証しています。対象は中央のみです。</p><p>復帰戦は仕上がり途上でもあり、そこで崩れずに戦えた馬は、ひと叩きした次に上積みが見込めます。一方で人気は復帰戦の着順に引っ張られやすく、その上積みまでは織り込まれにくい、というずれを狙います。</p><p>あわせて、同じような人気帯の馬を無条件に買った場合と比べてどうか、という対照も置いて、条件の絞り込み自体が効いているかを確かめながら検証しています。</p><h3>検証の進め方</h3><p>どの作戦も、結果を見る前に選定を固定するやり方（クリーン手順）で過去のレースを検証し、成績を作戦ごとのページに公開しています。判定の細かい条件は公開していないため、このページの説明だけでは同じ選定を再現することはできません。考え方の紹介としてお読みください。</p>
+</article>
+<p class="back"><a href="posts/2026-11-20-kaishu.html">← 回収率向上作戦へ</a></p>
+</div>
+</main>
+<div id="waline" style="max-width:800px;margin:24px auto;padding:0 16px;"></div>
+<script type="module">
+import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+init({ el: '#waline', serverURL: 'https://jra-pat-waline.vercel.app', lang: 'jp', login: 'disable' });
+</script>
+<footer class="site">明日は明日の馬が勝つ／馬券公開ブログ</footer>
+<script data-goatcounter="https://jra-pat.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

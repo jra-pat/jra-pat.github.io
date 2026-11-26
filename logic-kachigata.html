@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Muse式・勝ち型再現 の考え方 | 明日は明日の馬が勝つ／馬券公開ブログ</title>
+<meta name="description" content="作戦の考え方（ロジックの説明）です。判定の細かい条件は公開していないため、この説明だけでは選定を再現することはできません。">
+<link rel="canonical" href="https://jra-pat.github.io/logic-kachigata.html">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css">
+<style>article h3{margin-top:26px;}</style>
+</head>
+<body>
+<header class="site">
+<h1><a href="index.html">明日は明日の馬が勝つ</a></h1>
+<p>馬券公開ブログ（ゆめもぐら）</p>
+<nav class="tabs"><a href="index.html">予想記事</a><a href="notable.html">注目馬記事</a><a href="list.html">注目馬一覧</a><a href="pog.html">POG</a><a href="records.html">馬券成績</a><a href="kaishu.html">回収率向上作戦</a></nav>
+</header>
+<main>
+<div class="card">
+<h2>Muse式・勝ち型再現 の考え方</h2>
+<article>
+<p>馬ごとに「好走したときの条件」を集めて、その馬の「勝ち型」を作り、今回の条件がその型にどれだけ重なるかを見る、モコ（Muse）独自の作戦です。</p><p>見るのは「強いかどうか」ではなく、「その馬がうまくいったときの形が、今回どれだけ再現されているか」です。得意な条件は馬ごとに違うので、型も馬ごとに作ります。対象は中央の上位クラスのレースと、地方（南関）の中心となるレースです。</p><h3>検証の進め方</h3><p>どの作戦も、結果を見る前に選定を固定するやり方（クリーン手順）で過去のレースを検証し、成績を作戦ごとのページに公開しています。判定の細かい条件は公開していないため、このページの説明だけでは同じ選定を再現することはできません。考え方の紹介としてお読みください。</p>
+</article>
+<p class="back"><a href="posts/2026-11-20-kaishu.html">← 回収率向上作戦へ</a></p>
+</div>
+</main>
+<div id="waline" style="max-width:800px;margin:24px auto;padding:0 16px;"></div>
+<script type="module">
+import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+init({ el: '#waline', serverURL: 'https://jra-pat-waline.vercel.app', lang: 'jp', login: 'disable' });
+</script>
+<footer class="site">明日は明日の馬が勝つ／馬券公開ブログ</footer>
+<script data-goatcounter="https://jra-pat.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

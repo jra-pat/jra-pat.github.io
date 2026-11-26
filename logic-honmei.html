@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Genspark式・本命崩し の考え方 | 明日は明日の馬が勝つ／馬券公開ブログ</title>
+<meta name="description" content="作戦の考え方（ロジックの説明）です。判定の細かい条件は公開していないため、この説明だけでは選定を再現することはできません。">
+<link rel="canonical" href="https://jra-pat.github.io/logic-honmei.html">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css">
+<style>article h3{margin-top:26px;}</style>
+</head>
+<body>
+<header class="site">
+<h1><a href="index.html">明日は明日の馬が勝つ</a></h1>
+<p>馬券公開ブログ（ゆめもぐら）</p>
+<nav class="tabs"><a href="index.html">予想記事</a><a href="notable.html">注目馬記事</a><a href="list.html">注目馬一覧</a><a href="pog.html">POG</a><a href="records.html">馬券成績</a><a href="kaishu.html">回収率向上作戦</a></nav>
+</header>
+<main>
+<div class="card">
+<h2>Genspark式・本命崩し の考え方</h2>
+<article>
+<p>1番人気をやみくもに疑うのではなく、「飛びやすい本命にはレース前に分かる綻びがある」という仮説を検証する作戦です。Gensparkの考案をもとにしています。</p><p>綻びとして見るのは、今日の条件に合う過去の走りの裏付けが薄いことと、自分の取りたい位置に同じような脚質の馬が集まって自分の形で走れそうにないことです。綻びが見えるレースでは、本命ではなく、裏付けの厚い対抗の馬に妙味があると考えます。</p><p>検証は2つに分けて行います。本命が実際に飛びやすいのかということと、対抗に選んだ馬に妙味があるのかということは分けて数え、片方だけが成り立つ場合も分かるようにしています。前提となった最初の仮説（証拠と地形v1）は実データの検証で成り立たず、記録として残したうえで、この作戦は別の仮説として新しく立て直したものです。対象は中央の上位クラスのレースと、地方（南関）の中心となるレースです。</p><h3>検証の進め方</h3><p>どの作戦も、結果を見る前に選定を固定するやり方（クリーン手順）で過去のレースを検証し、成績を作戦ごとのページに公開しています。判定の細かい条件は公開していないため、このページの説明だけでは同じ選定を再現することはできません。考え方の紹介としてお読みください。</p>
+</article>
+<p class="back"><a href="posts/2026-11-20-kaishu.html">← 回収率向上作戦へ</a></p>
+</div>
+</main>
+<div id="waline" style="max-width:800px;margin:24px auto;padding:0 16px;"></div>
+<script type="module">
+import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+init({ el: '#waline', serverURL: 'https://jra-pat-waline.vercel.app', lang: 'jp', login: 'disable' });
+</script>
+<footer class="site">明日は明日の馬が勝つ／馬券公開ブログ</footer>
+<script data-goatcounter="https://jra-pat.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

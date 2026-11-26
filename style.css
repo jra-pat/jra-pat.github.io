@@ -111,3 +111,8 @@ article h3.sec {
   border-radius: 4px;
   margin: 1.7em 0 .7em;
 }
+
+/* 広い画面（スマホ横向き・タブレット・PC）では本文カラムを画面幅に合わせて広げる */
+@media (min-width: 800px) {
+  main { max-width: min(1150px, 95vw); }
+}

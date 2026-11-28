@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>電脳宙船1.0 仕様書 | 明日は明日の馬が勝つ／馬券公開ブログ</title>
+<meta name="description" content="宙船さんの馬選びの傾向を分析して作った作戦「電脳宙船1.0」の仕様書です。軸馬の条件の考え方・レース選び・買い目と金額の型・バックテスト結果と限界をまとめています。">
+<link rel="canonical" href="https://jra-pat.github.io/densen.html">
+<meta property="og:title" content="電脳宙船1.0 仕様書 | 明日は明日の馬が勝つ／馬券公開ブログ">
+<meta property="og:description" content="宙船さんの馬選びの傾向を分析して作った作戦「電脳宙船1.0」の仕様書です。軸馬の条件の考え方・レース選び・買い目と金額の型・バックテスト結果と限界をまとめています。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jra-pat.github.io/densen.html">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css">
+<style>
+.tblwrap{overflow-x:auto;margin:8px 0 12px;}
+table.spec{border-collapse:collapse;width:100%;font-size:14px;margin:4px 0;}
+table.spec th,table.spec td{border:1px solid #ccc;padding:5px 8px;text-align:left;}
+table.spec th{background:#f3efe4;}
+article h3{margin-top:26px;}
+article h4{margin-top:18px;}
+</style>
+</head>
+<body>
+<header class="site">
+<h1><a href="index.html">明日は明日の馬が勝つ</a></h1>
+<p>馬券公開ブログ（ゆめもぐら）</p>
+<nav class="tabs"><a href="index.html">予想記事</a><a href="notable.html">注目馬記事</a><a href="list.html">注目馬一覧</a><a href="pog.html">POG</a><a href="records.html">馬券成績</a><a href="kaishu.html">回収率向上作戦</a></nav>
+</header>
+<main>
+<div class="card">
+<div class="date">2026年11月28日</div>
+<h2>電脳宙船1.0 仕様書 〜宙船さんの馬選びを、機械の条件に翻訳する〜</h2>
+<article>
+
+<p>私の尊敬する馬券メンター宙船さんの馬選びを分析して作った作戦です。彼の買い目を集めて傾向を読み、的中した軸馬と凡走した軸馬を分けて比べる判別分析から、「人気の外側にいる実力馬を軸に取る」という型を機械の条件に翻訳しました。血統（Mの法則のタイプ）は使いません。日々の判定結果は<a href="forward-densen.html">電脳宙船フォワードテスト</a>で公開しています。</p>
+
+<h3>1. ねらい</h3>
+<p>宙船さんの軸は、人気の外側（6番人気以下）が中心です。浅い人気帯に寄せれば機械でも精度は出しやすいのですが、それでは彼の主戦場から離れてしまいます。この作戦の目標は、深い帯域のまま精度を出すことです。彼の言葉に「堅き本命を取り、不確かなる本命を避け、たしかなる穴を取る」というのがあります。人気がないこと自体ではなく、「負け方に説明がつく実力馬」を穴として取る。その見分けを条件にしたのがこの作戦です。</p>
+
+<h3>2. 対象レース</h3>
+<ul>
+<li>中央平地の全レース。障害・地方・海外は対象外。</li>
+<li>1レースにつき軸1頭まで。条件に合う馬がいなければ見送ります。</li>
+<li>バックテストでの買い方は単勝500円＋複勝500円です（フォワードテストでの買い方と金額は8節）。</li>
+</ul>
+
+<h3>3. 軸馬の条件</h3>
+<div class="tblwrap"><table class="spec">
+<tr><th>条件</th><th>内容</th></tr>
+<tr><td>人気・オッズ帯域</td><td>確定人気が6番人気以下（上限なし）、単勝オッズ100倍以下</td></tr>
+<tr><td>実力</td><td>過去5走（平地のみ）以内に3着以内が1回以上ある</td></tr>
+<tr><td>前走</td><td>前走が5着以内。または前走6着以下でも、1着との着差が1.0秒以内か、前走が今回より格上のクラスのレースだった</td></tr>
+</table></div>
+
+<h3>4. 条件の考え方（分析で学んだこと）</h3>
+<ul>
+<li><strong>前走の負け方に「説明がつく」かどうかが核心です。</strong>小差の負けや、格上のレースでの凡走は割り引かない。逆に、着差の大きい大敗からの巻き返しは、買っても当たらない傾向がありました。これは宙船さんの「前走不利馬はポイント高い」という見方と重なります。</li>
+<li><strong>休養明けは不利です。</strong>2か月以上空いた馬は、彼の軸でも当たっていませんでした。ただ、この作戦では前走条件と重なる部分が大きいため、独立した除外条件にはしていません。</li>
+<li><strong>「好走した条件に戻る」馬は強いシグナルです。</strong>ただし該当するレースが少ないので、必須条件にはせず、1頭の選び方（5節）の同条件の好走数で拾う形にしています。</li>
+<li>人気が前走より大きく落ちた馬が良い、という言い方は、データでは裏付けられませんでした。人気落ちそのものは条件に入れていません。</li>
+</ul>
+
+<h3>5. 1頭の選び方（タイブレーク）</h3>
+<ol>
+<li>直近の好走（3着以内）からの日数が小さい順</li>
+<li>今回と同条件（同じ馬場種別で距離±200m以内）での3着以内の回数が多い順</li>
+<li>過去5走の3着以内の回数が多い順</li>
+<li>人気が上位（数字が小さい）順</li>
+<li>馬番が小さい順</li>
+</ol>
+
+<h3>6. バックテスト結果</h3>
+<p>2025年9月6日〜2026年9月27日の中央平地3,465レースを対象に、結果が確認できたレースの選定分で精算しました。</p>
+<div class="tblwrap"><table class="spec">
+<tr><th>指標</th><th>値</th></tr>
+<tr><td>選定（精算分）</td><td>1,028件</td></tr>
+<tr><td>購入／払戻</td><td>1,031,000円／988,250円</td></tr>
+<tr><td>回収率</td><td>95.9%</td></tr>
+<tr><td>的中率</td><td>19.0%</td></tr>
+<tr><td>勝率</td><td>5.1%</td></tr>
+<tr><td>3着内率</td><td>19.1%</td></tr>
+<tr><td>選定馬の人気中央値</td><td>7.0番人気</td></tr>
+<tr><td>選定馬の単勝オッズ中央値</td><td>23.5倍</td></tr>
+</table></div>
+<p>ただし、この期間は条件を作るための分析に使った期間と重なっています。条件作りに使っていない期間（2025年6〜8月）だけで試したパイロット検証では、回収率は69.5%まで下がりました。設計に使った期間の数字は参考値として見てください。ここから先は、期間外のフォワードテストで確かめていきます。</p>
+
+<h3>7. レース選び（フォワードテストでの運用）</h3>
+<p>軸が立っても、全部のレースは買いません。宙船さんの舞台の選び方に寄せて、次のレースだけを買います。</p>
+<ul>
+<li>G1、11R、重賞（G2・G3）のレース</li>
+<li>1番人気の単勝オッズが3.0倍以上に割れた「混戦」のレース</li>
+<li>それ以外は見送り（軸候補だけ記録します）。リステッドは重賞扱いにしません</li>
+</ul>
+
+<h3>8. 買い目と金額の型（フォワードテスト）</h3>
+<p>買い目は、軸の単勝・複勝と三連単1頭軸マルチです。相手は人気順の上位から取り、1番人気は必ず含めます。「人気の外側の軸×人気側の相手」という彼の型です。買い目の表記も、宙船さんの投稿の書き方（全角数字、「三連単１頭軸マ」の表記）に合わせています。</p>
+<div class="tblwrap"><table class="spec">
+<tr><th>区分</th><th>単・複</th><th>三連単1頭軸マルチ</th><th>合計</th></tr>
+<tr><td>通常（混戦）</td><td>各3,000円</td><td>相手5頭・各100円</td><td>12,000円</td></tr>
+<tr><td>11R・重賞</td><td>各5,000円</td><td>相手6頭・各100円</td><td>19,000円</td></tr>
+<tr><td>G1</td><td>各10,000円</td><td>相手8頭・各100円</td><td>36,800円</td></tr>
+</table></div>
+<p>大舞台ほど金額を厚くするのも、彼の張り方に寄せたものです。</p>
+
+<h3>9. フォワードテスト</h3>
+<p>2026年11月28日から、中央競馬の開催日に、その日の全レースを発走前に判定し、確定した仮想の買い目を毎日記録しています。買い目はすべて仮想で、実際に購入はしていません。</p>
+<p>→ <a href="forward-densen.html">電脳宙船フォワードテスト（毎日の記録）</a></p>
+
+<h3>10. 限界</h3>
+<ul>
+<li>判定に使う過去走は5走分のみです。前走の不利（出遅れや直線での不利そのもの）はデータにないため、着差とクラスで近似しています。</li>
+<li>人気・オッズは確定値で検証しました。実戦の判定では取得時点のオッズを使うため、境界の付近では選定が変わることがあります。</li>
+<li>騎手や斤量の変化は条件に入れていません。</li>
+<li>8番人気以下だけのいちばん深い帯域では、機械の精度ははっきり落ちます。そこの目利きは、まだ再現できていません。</li>
+</ul>
+
+<h3>更新履歴</h3>
+<ul><li>2026年11月28日：電脳宙船1.0の仕様書を公開しました。</li></ul>
+
+</article>
+<p class="back"><a href="kaishu.html">← 回収率向上作戦へ</a></p>
+</div>
+</main>
+<div id="waline" style="max-width:800px;margin:24px auto;padding:0 16px;"></div>
+<script type="module">
+import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+init({ el: '#waline', serverURL: 'https://jra-pat-waline.vercel.app', lang: 'jp', login: 'disable' });
+</script>
+<footer class="site">明日は明日の馬が勝つ／馬券公開ブログ</footer>
+<script data-goatcounter="https://jra-pat.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
